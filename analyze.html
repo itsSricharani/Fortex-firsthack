@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Legal Notice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+    </div>
+    <nav>
+        <a href="index.html" data-i18n="home">Home</a>
+
+        <div class="lang-selector">
+            <span class="lang-current" data-lang="en">EN</span>
+            <div class="lang-dropdown">
+                <div data-lang="en">English</div>
+                <div data-lang="hi">भाषा</div>
+                <div data-lang="te">భాష</div>
+            </div>
+        </div>
+
+        <a href="guidelines.html" data-i18n="guidelines">Guidelines</a>
+        <a href="safety.html" data-i18n="safety">Safety</a>
+    </nav>
+</header>
+
+<main class="content">
+    <h1 data-i18n="analyze_title">Analyze a Legal Notice</h1>
+
+    <p data-i18n="analyze_desc">
+        Paste the legal notice text below or upload a PDF document.
+        The system will extract key information in simple language.
+    </p>
+
+    <button id="speakBtn" class="speaker-btn">🔊</button>
+
+    <textarea
+        id="noticeText"
+        placeholder="Paste legal notice text here..."
+        data-i18n-placeholder="analyze_placeholder">
+    </textarea>
+
+    <div class="file-input">
+        <input type="file" id="pdfFile" accept=".pdf" onchange="onFileSelected()">
+        <button id="removeFileBtn" onclick="clearSelectedFile()" style="display:none;">
+            Remove
+        </button>
+    </div>
+
+    <button class="primary-btn" onclick="openCaptcha()" data-i18n="analyze_btn">
+        Analyze
+    </button>
+</main>
+
+
+<div id="captchaOverlay" class="captcha-overlay">
+    <div class="captcha-modal">
+
+        
+        <h3 data-i18n="captcha_title">Verify you are human</h3>
+
+        <div id="captchaText" class="captcha-display"></div>
+
+        
+        <input
+            type="text"
+            id="captchaInput"
+            placeholder="Enter the code"
+            data-i18n-placeholder="captcha_placeholder"
+        >
+
+        
+        <button onclick="validateCaptcha()" data-i18n="captcha_verify">
+            Verify
+        </button>
+
+        
+        <p id="captchaResult"
+           class="captcha-result"
+           data-i18n="captcha_error">
+        </p>
+
+    </div>
+</div>
+
+
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-modal">
+        <div class="loading-icons">
+            <span class="loading-icon">🔍</span>
+            <span class="loading-icon">⚡</span>
+            <span class="loading-icon">📜</span>
+            <span class="loading-icon">⚙️</span>
+        </div>
+        <p id="loadingPhrase">Analyzing your document...</p>
+    </div>
+</div>
+
+<script src="lang.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+</script>
+
+<script>
+let captcha = "";
+
+function openCaptcha() {
+    document.getElementById("captchaOverlay").style.display = "flex";
+    document.getElementById("captchaInput").value = "";
+    document.getElementById("captchaResult").innerText = "";
+    generateCaptcha();
+
+    
+    if (typeof applyTranslations === "function") {
+        applyTranslations();
+    }
+}
+
+function generateCaptcha() {
+    captcha = Math.floor(1000 + Math.random() * 9000).toString();
+    document.getElementById("captchaText").innerText = captcha;
+}
+
+function validateCaptcha() {
+    const userInput = document.getElementById("captchaInput").value.trim();
+
+    if (userInput === captcha) {
+        document.getElementById("captchaOverlay").style.display = "none";
+        document.getElementById("loadingOverlay").style.display = "flex";
+        startLoadingPhrases();
+        analyzeNotice();
+    } else {
+
+        
+        if (typeof translations !== "undefined" && typeof currentLang !== "undefined") {
+            document.getElementById("captchaResult").innerText =
+                translations[currentLang]?.captcha_error ||
+                translations.en.captcha_error;
+        } else {
+            document.getElementById("captchaResult").innerText =
+                "Incorrect code. Please try again.";
+        }
+
+        generateCaptcha();
+    }
+}
+</script>
+
+<script>
+async function analyzeNotice() {
+    const text = document.getElementById("noticeText").value.trim();
+    const file = document.getElementById("pdfFile").files[0];
+
+    try {
+        let response;
+
+        if (file) {
+            const formData = new FormData();
+            formData.append("file", file);
+            response = await fetch("http://127.0.0.1:5000/analyze-pdf", {
+                method: "POST",
+                body: formData
+            });
+
+        } else if (text.length > 0) {
+            response = await fetch("http://127.0.0.1:5000/analyze", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text })
+            });
+
+        } else {
+            alert("Please paste text or upload a PDF.");
+            return;
+        }
+
+        const data = await response.json();
+        sessionStorage.setItem("analysisResult", JSON.stringify(data));
+        window.location.href = "results.html";
+
+    } catch (error) {
+        alert("Something went wrong while analyzing.");
+        console.error(error);
+
+    } finally {
+        document.getElementById("loadingOverlay").style.display = "none";
+        stopLoadingPhrases();
+    }
+}
+</script>
+
+<script>
+const phrases = [
+    "Analyzing your document...",
+    "Checking for inconsistencies...",
+    "Summarizing key points...",
+    "Almost there...",
+    "Preparing your results..."
+];
+
+let phraseIndex = 0;
+let phraseInterval;
+
+function startLoadingPhrases() {
+    phraseInterval = setInterval(() => {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        document.getElementById("loadingPhrase").innerText = phrases[phraseIndex];
+    }, 1500);
+}
+
+function stopLoadingPhrases() {
+    clearInterval(phraseInterval);
+}
+</script>
+
+<script>
+function onFileSelected() {
+    document.getElementById("removeFileBtn").style.display = "inline-block";
+}
+
+function clearSelectedFile() {
+    document.getElementById("pdfFile").value = "";
+    document.getElementById("removeFileBtn").style.display = "none";
+}
+</script>
+
+</body>
+</html>

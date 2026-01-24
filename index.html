@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legal Notices, Explained Clearly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+    </div>
+    <nav>
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="guidelines.html" data-i18n="guidelines">Guidelines</a>
+        <a href="safety.html" data-i18n="safety">Safety</a>
+
+        <!-- Language selector -->
+        <div class="lang-selector">
+            <span class="lang-current">EN</span>
+            <div class="lang-dropdown">
+                <div data-lang="en">English</div>
+                <div data-lang="hi">भाषा</div>
+                <div data-lang="te">భాష</div>
+            </div>
+        </div>
+    </nav>
+
+   
+ 
+</header>
+
+<main class="hero">
+    <div class="hero-text">
+        <h1 data-i18n="hero_title">LEGAL NOTICES,<br>EXPLAINED CLEARLY.</h1>
+        <p data-i18n="hero_desc">
+            A simple platform that explains legal notices in plain language,
+            highlights deadlines, and shows potential risks — without legal advice.
+        </p>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <a href="analyze.html" class="primary-btn" data-i18n="hero_btn">Try Now!</a>
+            <button id="speakBtn" class="speaker-btn">🔊</button>
+        </div>
+    </div>
+
+    <div class="hero-visual notice-image">
+        <img src="WhatsApp Image 2026-01-24 at 11.26.42.jpeg" alt="lady justice" class="img-base">
+        <img src="WhatsApp Image 2026-01-24 at 11.32.11.jpeg" alt="lady justice" class="img-hover">
+    </div>
+</main>
+
+<section class="feature-section alt">
+    <h2 data-i18n="privacy_title">Your Privacy, Our Priority</h2>
+    <p data-i18n="privacy_desc">
+        Documents and text submitted for analysis are not stored, indexed,
+        or tracked. Processing happens only to generate results, after which
+        the data is discarded. Your information remains private and under
+        your control.
+    </p>
+</section>
+
+<section class="feature-section">
+    <h2 data-i18n="access_title">Accessible by Design</h2>
+    <p data-i18n="access_desc">
+        The platform supports English, Hindi, and Telugu — including content
+        written in native scripts or English transliteration.
+        A built-in voice feature can read simplified outputs aloud,
+        improving accessibility for users who prefer listening over reading.
+    </p>
+</section>
+
+<section class="feature-section alt">
+    <h2 data-i18n="usage_title">One Tool, Multiple Uses</h2>
+    <p data-i18n="usage_desc">
+        From rent disputes and payment demands to government notices, compliance
+        reminders, and contractual warnings — a wide range of legal documents
+        can be simplified using a single interface.
+    </p>
+</section>
+
+<script src="lang.js"></script>
+
+
+<script>
+window.addEventListener("load", () => { document.body.classList.add("loaded"); });
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#")) {
+            event.preventDefault();
+            document.body.classList.remove("loaded");
+            setTimeout(() => { window.location.href = href; }, 300);
+        }
+    });
+});
+</script>
+
+<footer class="footer-ribbon">
+    <p>Contact: support@legalsimplify.in &nbsp; | &nbsp; Academic Project &nbsp; | &nbsp; Not Legal Advice</p>
+    <p>© 2026 LegalSimplify · Privacy · Guidelines · Safety</p>
+</footer>
+<script src="lang.js"></script>
+
+</body>
+</html>
