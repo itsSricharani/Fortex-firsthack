@@ -33,23 +33,39 @@
 
 </header>
 
-<main class="content">
+<main class="content safety-center">
     <h1 data-i18n="safety_title">Your privacy, our priority.</h1>
+
     <button class="speaker-btn" data-speak-page>🔊</button>
-    <p data-i18n="safety_desc1">
-        Any text or document you submit is processed only for analysis and is not
-        stored, logged, or shared.
-    </p>
-    <p data-i18n="safety_desc2">
-        Uploaded files are handled temporarily and discarded after processing.
-        We do not maintain user histories or retain legal documents.
-    </p>
-    <p data-i18n="safety_desc3">
-        This platform is designed with privacy-first principles in mind.
-    </p>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <h3 data-i18n="safety_card1_title">No data storage</h3>
+            <p data-i18n="safety_desc1">
+                Any text or document you submit is processed only for analysis and is not
+                stored, logged, or shared.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3 data-i18n="safety_card2_title">Temporary processing</h3>
+            <p data-i18n="safety_desc2">
+                Uploaded files are handled temporarily and discarded after processing.
+                We do not maintain user histories or retain legal documents.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3 data-i18n="safety_card3_title">Privacy-first design</h3>
+            <p data-i18n="safety_desc3">
+                This platform is designed with privacy-first principles in mind.
+            </p>
+        </div>
+
+    </div>
 </main>
 
-<script src="lang.js"></script>
 
 <script>
 window.addEventListener("load", () => { document.body.classList.add("loaded"); });

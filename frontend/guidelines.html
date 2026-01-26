@@ -33,24 +33,40 @@
 
 </header>
 
-<main class="content">
+<main class="content guidelines-center">
     <h1 data-i18n="guidelines_title">Usage Guidelines</h1>
+
     <button class="speaker-btn" data-speak-page>🔊</button>
-    <p data-i18n="guidelines_desc1">
-        This platform is intended to help users understand legal notices in simple,
-        plain language. It does not replace professional legal consultation.
-    </p>
-    <p data-i18n="guidelines_desc2">
-        The explanations provided are informational in nature and are generated
-        using automated analysis. They may not capture every legal nuance.
-    </p>
-    <p data-i18n="guidelines_desc3">
-        Users are advised to consult a qualified legal professional for formal
-        advice or legal action.
-    </p>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <h3 data-i18n="guidelines_card1_title">Purpose of this platform</h3>
+            <p data-i18n="guidelines_desc1">
+                This platform is intended to help users understand legal notices in simple,
+                plain language. It does not replace professional legal consultation.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3 data-i18n="guidelines_card2_title">Limitations</h3>
+            <p data-i18n="guidelines_desc2">
+                The explanations provided are informational in nature and are generated
+                using automated analysis. They may not capture every legal nuance.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3 data-i18n="guidelines_card3_title">User responsibility</h3>
+            <p data-i18n="guidelines_desc3">
+                Users are advised to consult a qualified legal professional for formal
+                advice or legal action.
+            </p>
+        </div>
+
+    </div>
 </main>
 
-<script src="lang.js"></script>
 
 <script>
 window.addEventListener("load", () => { document.body.classList.add("loaded"); });

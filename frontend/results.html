@@ -66,6 +66,11 @@
         </div>
     </div>
 
+    <div class="next-steps">
+        <a href="next-steps.html" class="nextsteps-btn"> What to do next ?</a>
+
+    </div>
+
     <!-- RISK INDICATOR -->
     <div class="indicator-section">
     <h2>Risk Indicator</h2>
@@ -74,12 +79,7 @@
     </div>
 </div>
 
-<div class="indicator-section">
-    <h2>Deadline</h2>
-    <div class="gradient-bar deadline-bar">
-        <div class="notch" id="deadline-notch"></div>
-    </div>
-</div>
+
 
     <!-- TRY AGAIN BUTTON -->
     <div class="retry-section">
@@ -120,21 +120,7 @@ function setIndicators(risk, deadlineText) {
     else if (risk === "Medium") riskNotch.style.left = "45%";
     else riskNotch.style.left = "85%";
 
-    // ---------- Deadline bar ----------
-    const deadlineNotch = document.getElementById("deadline-notch");
-    if (!deadlineNotch) return;
 
-    const days = parseInt(deadlineText);
-
-    if (isNaN(days)) {
-        deadlineNotch.style.left = "50%";
-    } else if (days <= 10) {
-        deadlineNotch.style.left = "10%";
-    } else if (days <= 20) {
-        deadlineNotch.style.left = "50%";
-    } else {
-        deadlineNotch.style.left = "85%";
-    }
 }
 </script>
 
