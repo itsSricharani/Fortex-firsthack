@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guidelines</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+    <div class="logo">
+        <a href="index.html" class="logo-wrap">
+            <img src="logo.png" alt="Logo">
+            <span id="brandName">NyāyMārg</span>
+        </a>
+    </div>
+<nav>
+        <a href="index.html" data-i18n="home">Home</a>
+
+        <div class="lang-selector">
+            <span id="languageBtn" class="lang-current" data-lang="en">Language</span>
+            <div class="lang-dropdown">
+                <div data-lang="en">English</div>
+                <div data-lang="hi">भाषा</div>
+                <div data-lang="te">భాష</div>
+            </div>
+        </div>
+
+        <a href="guidelines.html" data-i18n="guidelines">Guidelines</a>
+        <a href="safety.html" data-i18n="safety">Safety</a>
+    </nav>
+    
+
+</header>
+
+<main class="content">
+    <h1 data-i18n="guidelines_title">Usage Guidelines</h1>
+    <button class="speaker-btn" data-speak-page>🔊</button>
+    <p data-i18n="guidelines_desc1">
+        This platform is intended to help users understand legal notices in simple,
+        plain language. It does not replace professional legal consultation.
+    </p>
+    <p data-i18n="guidelines_desc2">
+        The explanations provided are informational in nature and are generated
+        using automated analysis. They may not capture every legal nuance.
+    </p>
+    <p data-i18n="guidelines_desc3">
+        Users are advised to consult a qualified legal professional for formal
+        advice or legal action.
+    </p>
+</main>
+
+<script src="lang.js"></script>
+
+<script>
+window.addEventListener("load", () => { document.body.classList.add("loaded"); });
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#")) {
+            event.preventDefault();
+            document.body.classList.remove("loaded");
+            setTimeout(() => { window.location.href = href; }, 300);
+        }
+    });
+});
+</script>
+
+<script src="js/lang.js"></script>
+<script src="js/speech.js"></script>
+<script src="js/captcha.js"></script>
+
+
+</body>
+</html>

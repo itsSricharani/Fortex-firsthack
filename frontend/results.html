@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+
+<header class="top-bar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo">
+            <span id="brandName">NyāyMārg</span>
+        </a>
+    </div>
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="#">Language</a>
+        <a href="#">Guidelines</a>
+        <a href="#">Safety</a>
+    </nav>
+
+
+</header>
+
+<section class="content results-container">
+
+    <h1 class="page-title">Legal Notice Analysis</h1>
+
+    <!-- SUMMARY CARD (BIG) -->
+    <div class="summary-card">
+        <div class="card-header">
+            <h3>Summary</h3>
+            <button class="speaker-btn" aria-hidden="true" onclick="speakText('summary')">🔊</button>
+        </div>
+        <p id="summary"></p>
+    </div>
+
+    <!-- 3 SMALL CARDS -->
+    <div class="three-cards">
+        <div class="small-card">
+            <div class="card-header">
+                <h3>Intent</h3>
+                <button class="speaker-btn" aria-hidden="true" onclick="speakText('intent')">🔊</button>
+            </div>
+            <p id="intent"></p>
+        </div>
+
+        <div class="small-card">
+            <div class="card-header">
+                <h3>Risk</h3>
+                <button class="speaker-btn" aria-hidden="true" onclick="speakText('risk')">🔊</button>
+            </div>
+            <p id="risk"></p>
+        </div>
+
+        <div class="small-card">
+            <div class="card-header">
+                <h3>Deadline</h3>
+                <button class="speaker-btn" aria-hidden="true" onclick="speakText('deadline')">🔊</button>
+            </div>
+            <p id="deadline"></p>
+        </div>
+    </div>
+
+    <!-- RISK INDICATOR -->
+    <div class="indicator-section">
+    <h2>Risk Indicator</h2>
+    <div class="gradient-bar risk-bar">
+        <div class="notch" id="risk-notch"></div>
+    </div>
+</div>
+
+<div class="indicator-section">
+    <h2>Deadline</h2>
+    <div class="gradient-bar deadline-bar">
+        <div class="notch" id="deadline-notch"></div>
+    </div>
+</div>
+
+    <!-- TRY AGAIN BUTTON -->
+    <div class="retry-section">
+        <a href="analyze.html" class="retry-btn">Try Another Notice !!</a>
+    </div>
+
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const storedData = sessionStorage.getItem("analysisResult");
+
+    if (!storedData) {
+        alert("No analysis data found.");
+        window.location.href = "analyze.html";
+        return;
+    }
+
+    const data = JSON.parse(storedData);
+
+    document.getElementById("summary").innerText = data.summary || "Unknown";
+    document.getElementById("intent").innerText = data.intent || "Unknown";
+    document.getElementById("deadline").innerText = data.deadline || "Not found";
+    document.getElementById("risk").innerText = data.risk || "Unknown";
+
+    // IMPORTANT: set indicators AFTER text is filled
+    setIndicators(data.risk, data.deadline);
+});
+
+function setIndicators(risk, deadlineText) {
+
+    // ---------- Risk bar ----------
+    const riskNotch = document.getElementById("risk-notch");
+    if (!riskNotch) return;
+
+    if (risk === "Low") riskNotch.style.left = "5%";
+    else if (risk === "Medium") riskNotch.style.left = "45%";
+    else riskNotch.style.left = "85%";
+
+    // ---------- Deadline bar ----------
+    const deadlineNotch = document.getElementById("deadline-notch");
+    if (!deadlineNotch) return;
+
+    const days = parseInt(deadlineText);
+
+    if (isNaN(days)) {
+        deadlineNotch.style.left = "50%";
+    } else if (days <= 10) {
+        deadlineNotch.style.left = "10%";
+    } else if (days <= 20) {
+        deadlineNotch.style.left = "50%";
+    } else {
+        deadlineNotch.style.left = "85%";
+    }
+}
+</script>
+
+
+<script>
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+</script>
+
+<div class="disclaimer">
+    ⚠️ This analysis is generated using AI and rule-based systems.
+    It is not legal advice. Please consult a qualified lawyer before
+    taking any legal action.
+</div>
+
+
+<footer class="footer-ribbon">
+    <p>
+        Contact: support@legalsimplify.in &nbsp; | &nbsp;
+        Academic Project &nbsp; | &nbsp;
+        Not Legal Advice
+    </p>
+</footer>
+<script src="js/lang.js"></script>
+<script src="js/speech.js"></script>
+<script src="js/captcha.js"></script>
+
+
+</body>
+</html>
