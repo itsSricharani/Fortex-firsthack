@@ -184,13 +184,13 @@ async function analyzeNotice() {
             const formData = new FormData();
             formData.append("file", file);
             formData.append("lang", currentLang);
-            response = await fetch("http://127.0.0.1:5000/analyze-pdf", {
+            response = await fetch("https://fortex-backend.onrender.com/analyze-pdf", {
                 method: "POST",
                 body: formData
             });
 
         } else if (text.length > 0) {
-            response = await fetch("http://127.0.0.1:5000/analyze", {
+            response = await fetch("https://fortex-backend.onrender.com/analyze", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
