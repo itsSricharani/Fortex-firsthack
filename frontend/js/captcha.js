@@ -19,8 +19,6 @@
     };
 
     function updateCaptchaTextHard() {
-
-  
         document.querySelectorAll("*").forEach(el => {
             if (!el.children.length && el.innerText) {
                 const text = el.innerText.trim();
@@ -55,26 +53,28 @@
         });
     }
 
-        document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
         const digits = document.querySelectorAll(".captcha-digit");
 
         digits.forEach((box, idx) => {
             box.addEventListener("input", () => {
-            if (box.value && idx < digits.length - 1) {
-                digits[idx + 1].focus();
-            }
+                if (box.value && idx < digits.length - 1) {
+                    digits[idx + 1].focus();
+                }
             });
 
             box.addEventListener("keydown", e => {
-            if (e.key === "Backspace" && !box.value && idx > 0) {
-                digits[idx - 1].focus();
-            }
+                if (e.key === "Backspace" && !box.value && idx > 0) {
+                    digits[idx - 1].focus();
+                }
             });
         });
 
         window.getCaptchaValue = function () {
             return Array.from(digits).map(d => d.value).join("");
         };
+
+        // Update multilingual texts
+        updateCaptchaTextHard();
     });
 })();
-
