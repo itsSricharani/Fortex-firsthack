@@ -17,7 +17,6 @@
 
   <nav>
     <a href="index.html" data-i18n="home">Home</a>
-
     <div class="lang-selector">
       <span id="languageBtn" class="lang-current">Language</span>
       <div class="lang-dropdown">
@@ -49,9 +48,7 @@
   <h2>Find a lawyer near you</h2>
 
   <!-- Automatic location button -->
-  <button id="findNearbyLawyer" class="lawyer-btn">
-    Find lawyer near me
-  </button>
+  <button id="findNearbyLawyer" class="lawyer-btn">Find lawyer near me</button>
 
   <!-- Manual input -->
   <div id="lawyerFinder" style="display:none; margin-top:20px;">
@@ -67,7 +64,6 @@
   </div>
 
   <div id="lawyerResults" style="margin-top:20px;"></div>
-
 </main>
 
 <script src="js/lang.js"></script>
@@ -85,12 +81,15 @@ function showManual() {
   manualDiv.style.display = "block";
 }
 
-// Unified function to fetch lawyers
-async function fetchLawyers(state) {
-  if (!state) {
+// Unified function to fetch lawyers (case-insensitive)
+async function fetchLawyers(inputState) {
+  if (!inputState) {
     resultsBox.innerHTML = "<p>Please enter a state.</p>";
     return;
   }
+
+  const state = inputState.trim().toLowerCase();
+  console.log("Fetching lawyers for state:", state); // <-- debug
 
   resultsBox.innerHTML = "<p>Searching lawyers...</p>";
 
@@ -108,9 +107,11 @@ async function fetchLawyers(state) {
 
     if (!data || data.length === 0) {
       resultsBox.innerHTML = "<p>No lawyers found in this state.</p>";
-      showManual(); // allow user to search manually
+      showManual();
       return;
     }
+
+    console.log("Returned lawyers:", data); // <-- debug
 
     data.forEach(l => {
       resultsBox.innerHTML += `
@@ -131,8 +132,8 @@ async function fetchLawyers(state) {
 
 // Manual search
 document.getElementById("searchManual").onclick = () => {
-  const state = document.getElementById("stateInput").value.trim();
-  fetchLawyers(state);
+  const stateInput = document.getElementById("stateInput").value;
+  fetchLawyers(stateInput);
 };
 
 // Automatic location only when button clicked
@@ -152,15 +153,15 @@ document.getElementById("findNearbyLawyer").onclick = () => {
         const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
         const data = await res.json();
 
-        const state = data.address.state || "";
-        console.log("Detected state from geolocation:", state); // <-- log for debug
-        if (!state) {
+        const detectedState = (data.address.state || "").trim();
+        console.log("Detected state from geolocation:", detectedState); // <-- debug
+        if (!detectedState) {
           alert("Could not detect state. Enter manually.");
           showManual();
           return;
         }
 
-        fetchLawyers(state);
+        fetchLawyers(detectedState);
 
       } catch (err) {
         console.error(err);
