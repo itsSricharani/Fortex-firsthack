@@ -1,3 +1,9 @@
+/* GLOBAL MOBILE OVERFLOW FIX */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @font-face {
     font-family: "Azeret Mono";
     src: url("./assets/fonts/AzeretMono/AzeretMono-Regular.woff2") format("woff2");
@@ -1483,4 +1489,1526 @@ textarea {
   margin-top: 14px;
   font-size: 14px;
   color: #dc2626;
+}
+/* ============================
+   MOBILE HOTFIX (HACKATHON)
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Main container full width */
+  .container,
+  .main,
+  .wrapper,
+  .hero,
+  .section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Header fix */
+  header,
+  nav,
+  .navbar {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 10px !important;
+  }
+
+  .navbar a,
+  nav a {
+    display: block !important;
+    padding: 6px 0 !important;
+  }
+
+  /* Hide hero image */
+  .hero-image,
+  .hero-img,
+  .hero-right,
+  .image-box {
+    display: none !important;
+  }
+
+  /* Hero text */
+  h1 {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Buttons */
+  button,
+  .btn,
+  .cta,
+  input[type="submit"] {
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 15px !important;
+    margin: 5px 0 !important;
+  }
+
+  /* Forms stack */
+  form,
+  .form-group,
+  .input-group {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100% !important;
+    font-size: 15px !important;
+    padding: 10px !important;
+  }
+
+  /* Cards / boxes */
+  .card,
+  .box,
+  .panel,
+  .feature {
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+}
+/* ================================
+   MOBILE FIX v2 (STABLE)
+   For NyayMarg - Hackathon Safe
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Kill all overflow */
+  * {
+    max-width: 100% !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* HEADER */
+  .top-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 10px !important;
+  }
+
+  nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 6px !important;
+  }
+
+  /* HERO RESET */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px 14px !important;
+    position: relative !important;
+  }
+
+  /* Remove all decorative shapes */
+  .hero::before,
+  .hero::after,
+  .hero *::before,
+  .hero *::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Remove weird backgrounds */
+  .hero-text,
+  .hero-text > div {
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* TEXT */
+  .hero-text {   
+    width: 100% !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  .hero-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    margin: 10px 0 !important;
+  }
+
+  .hero-text p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin: 10px auto !important;
+  }
+
+  /* BUTTON GROUP */
+  .hero-text > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  .try-btn,
+  .speaker-btn,
+  .pause-btn {
+    width: 100% !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* REMOVE IMAGE */
+  .hero-visual,
+  .notice-image,
+  .justice-img {
+    display: none !important;
+  }
+
+  /* FEATURES */
+  .feature-section {
+    padding: 22px 12px !important;
+    text-align: center !important;
+  }
+
+  .feature-section h2 {
+    font-size: 20px !important;
+  }
+
+  .feature-section p {
+    font-size: 14px !important;
+  }
+
+  /* FOOTER */
+  .footer-ribbon {
+    text-align: center !important;
+    padding: 15px 10px !important;
+    font-size: 12px !important;
+  }
+
+}
+/* ================================
+   MOBILE POLISH v3 (FINAL)
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* HEADER: Logo Left, Nav Right */
+  .top-bar {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+  }
+
+  .logo {
+    justify-content: flex-start !important;
+  }
+
+  nav {
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    margin-top: 0 !important;
+  }
+
+  nav a,
+  .lang-selector {
+    font-size: 13px !important;
+    padding: 4px 6px !important;
+  }
+
+  /* HERO: Center vertically */
+  .hero {
+    min-height: 85vh !important;
+    justify-content: center !important;
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hero-text {
+    margin-top: -20px !important;
+  }
+
+  /* Title spacing */
+  .hero-title {
+    margin-bottom: 14px !important;
+  }
+
+  /* Paragraph spacing */
+  .hero-text p {
+    margin-bottom: 18px !important;
+  }
+
+  /* BUTTONS: Smaller + Clean */
+  .try-btn {
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+    border-radius: 20px !important;
+  }
+
+  .speaker-btn,
+  .pause-btn {
+    font-size: 14px !important;
+    padding: 8px 10px !important;
+    width: auto !important;
+    min-width: 45px !important;
+  }
+
+  /* Button group tighter */
+  .hero-text > div {
+    gap: 8px !important;
+    margin-top: 5px !important;
+  }
+
+}
+/* ================================
+   MOBILE POLISH v4 (ALIGNMENT FIX)
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* HEADER: Push logo extreme left */
+  .top-bar {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .logo-wrap {
+    margin-left: -6px !important;
+  }
+
+  #brandName {
+    font-size: 18px !important;
+  }
+
+  .logo img {
+    height: 28px !important;
+  }
+
+  /* NAVBAR: tighter + readable */
+  nav {
+    gap: 6px !important;
+  }
+
+  nav a,
+  .lang-selector {
+    font-size: 12px !important;
+    padding: 3px 4px !important;
+  }
+
+  /* HERO: Move content slightly down */
+  .hero-text {
+    margin-top: 10px !important;
+  }
+
+  /* BUTTON GROUP: horizontal like desktop */
+  .hero-text > div {
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .try-btn {
+    width: auto !important;
+    min-width: 110px !important;
+  }
+
+  .speaker-btn,
+  .pause-btn {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
+
+  /* Center hero better */
+  .hero {
+    padding-top: 25px !important;
+  }
+
+}
+/* ================================
+   MOBILE POLISH v5 (HEADER FINAL)
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Force header single line */
+  .top-bar {
+    flex-wrap: nowrap !important;
+    height: 52px !important;
+  }
+
+  /* Make logo always visible */
+  .logo-wrap {
+    display: flex !important;
+    align-items: center !important;
+    max-width: 120px !important;
+    overflow: hidden !important;
+  }
+
+  #brandName {
+    font-size: 16px !important;
+    white-space: nowrap !important;
+  }
+
+  .logo img {
+    height: 24px !important;
+    margin-right: 4px !important;
+  }
+
+  /* Navbar single row */
+  nav {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  nav a,
+  .lang-selector {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Reduce wasted space */
+  .hero {
+    min-height: 75vh !important;
+    padding-top: 10px !important;
+  }
+
+  .hero-text {
+    margin-top: -10px !important;
+  }
+
+  /* Move heading up */
+  .hero-title {
+    margin-top: 0 !important;
+  }
+
+}
+/* ================================
+   MOBILE NAV FIX v6 (2-ROW RIGHT)
+   Home + Language on top
+   Guidelines + Safety below
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Header layout */
+  .top-bar {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    align-items: center !important;
+    padding: 8px 10px !important;
+    height: auto !important;
+  }
+
+  /* Logo left */
+  .logo {
+    grid-row: 1 / span 2 !important;
+    grid-column: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .logo-wrap {
+    margin: 0 !important;
+  }
+
+  #brandName {
+    font-size: 16px !important;
+  }
+
+  .logo img {
+    height: 24px !important;
+  }
+
+  /* Nav right: 2 rows */
+  nav {
+    grid-column: 2 !important;
+    display: grid !important;
+    grid-template-rows: auto auto !important;
+    row-gap: 4px !important;
+    justify-content: end !important;
+  }
+
+  /* First row: Home + Language */
+  nav a[href*="index"],
+  .lang-selector {
+    grid-row: 1 !important;
+  }
+
+  /* Second row: Guidelines + Safety */
+  nav a[href*="guidelines"],
+  nav a[href*="safety"] {
+    grid-row: 2 !important;
+  }
+
+  nav a,
+  .lang-selector {
+    font-size: 12px !important;
+    padding: 2px 4px !important;
+    white-space: nowrap !important;
+  }
+
+}
+/* ================================
+   MOBILE DROPDOWN FIX (NO CLIP)
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Allow dropdown to overflow */
+  .top-bar {
+    overflow: visible !important;
+  }
+
+  nav {
+    overflow: visible !important;
+  }
+
+  .lang-selector {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .lang-dropdown {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: #fff !important;
+    min-width: 100px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    border-radius: 6px !important;
+  }
+
+}
+/* ================================
+   MOBILE DROPDOWN ALIGN FIX
+   ================================ */
+
+@media (max-width: 768px) {
+
+  .lang-selector {
+    position: relative !important;
+  }
+
+  .lang-dropdown {
+    right: auto !important;
+    left: 0 !important;
+
+    min-width: 120px !important;
+    padding: 6px 0 !important;
+
+    display: none;
+  }
+
+  /* Show dropdown on hover/click */
+  .lang-selector:hover .lang-dropdown,
+  .lang-selector:focus-within .lang-dropdown {
+    display: block !important;
+  }
+
+  .lang-dropdown div {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+  }
+
+  .lang-dropdown div:hover {
+    background: rgba(0,0,0,0.08) !important;
+  }
+
+}
+
+/* ================================
+   MOBILE DROPDOWN COLOR FIX
+   ================================ */
+
+@media (max-width: 768px) {
+
+  .lang-dropdown {
+    background: #2f3f46 !important;   /* match navbar */
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+  }
+
+  .lang-dropdown div {
+    color: #ffffff !important;
+  }
+
+  .lang-dropdown div:hover {
+    background: rgba(255,255,255,0.12) !important;
+  }
+
+}
+/* ================================
+   MOBILE FOOTER CLEANUP
+   ================================ */
+
+@media (max-width: 768px) {
+
+  .footer-ribbon {
+    padding: 20px 12px !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  .footer-ribbon p {
+    margin: 6px 0 !important;
+    display: block !important;
+  }
+
+  /* Remove excessive wave height */
+  .footer-ribbon::before,
+  .footer-ribbon::after {
+    display: none !important;
+  }
+
+  /* Stack links cleanly */
+  .footer-ribbon a {
+    display: inline-block !important;
+    margin: 0 4px !important;
+  }
+
+}
+/* ================================
+   MOBILE CONTENT + FOOTER COMPACT
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* Feature Sections */
+  .feature-section {
+    padding: 28px 18px !important;
+    text-align: center;
+  }
+
+  .feature-section h2 {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 0.5px;
+  }
+
+  .feature-section p {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove excess gap between sections */
+  .feature-section + .feature-section {
+    margin-top: 0 !important;
+  }
+
+  /* Footer Compact */
+  .footer-ribbon {
+    padding: 14px 10px !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    text-align: center;
+  }
+
+  .footer-ribbon p {
+    margin: 4px 0 !important;
+  }
+
+  /* Prevent footer from looking tall */
+  .footer-ribbon br {
+    display: none;
+  }
+
+}
+/* ================================
+   MOBILE COMPACT UI v2
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* ===== Feature / Card Sections ===== */
+
+  .feature-section {
+    padding: 22px 14px !important;
+    text-align: center;
+  }
+
+  .feature-section h2 {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+  }
+
+  .feature-section p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    opacity: 0.95;
+  }
+
+  /* Reduce space between cards */
+  .feature-section + .feature-section {
+    margin-top: -4px !important;
+  }
+
+  /* Alternate background sections */
+  .feature-section.alt {
+    padding: 20px 14px !important;
+  }
+
+
+  /* ===== Footer Compact ===== */
+
+  .footer-ribbon {
+    padding: 10px 8px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    text-align: center;
+  }
+
+  .footer-ribbon p {
+    margin: 2px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remove excess height */
+  .footer-ribbon * {
+    max-width: 100% !important;
+  }
+
+}
+/* ================================
+   MOBILE FOOTER ULTRA COMPACT
+   ================================ */
+
+@media (max-width: 768px) {
+
+  .footer-ribbon {
+    padding: 6px 6px !important;
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+    min-height: auto !important;
+  }
+
+  .footer-ribbon p {
+    margin: 1px 0 !important;
+    padding: 0 !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Kill extra spacing from children */
+  .footer-ribbon * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+}
+/* ================================
+   MOBILE FOOTER HARD RESET
+   ================================ */
+
+@media (max-width: 768px) {
+
+  footer.footer-ribbon {
+    all: unset;
+    display: block;
+    background: #2f3e46;
+    color: #fff;
+
+    padding: 6px 8px !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  footer.footer-ribbon p {
+    margin: 2px 0 !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+}
+/* ================================
+   MOBILE COMPACT + CLEAN SPACING
+   ================================ */
+
+@media (max-width: 768px) {
+
+  /* ---------- Feature Sections ---------- */
+
+  .feature-section {
+    padding: 18px 14px !important;
+    margin: 0 !important;
+  }
+
+  .feature-section h2 {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.3px;
+  }
+
+  .feature-section p {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    color: #333;
+  }
+
+  /* Reduce gap between cards */
+  .feature-section + .feature-section {
+    margin-top: 8px !important;
+  }
+
+
+
+  /* ---------- Footer Refinement ---------- */
+
+  footer.footer-ribbon {
+    padding: 10px 12px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  footer.footer-ribbon p {
+    margin: 4px 0 !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Make links look neat */
+  footer.footer-ribbon a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 3px;
+  }
+
+}
+/* ================================
+   HARD RESET : MOBILE RESULTS UI
+   ================================ */
+
+@media screen and (max-width: 600px) {
+
+  /* Kill horizontal overflow */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* Main wrapper */
+  main,
+  .results-container,
+  .result-container,
+  .analysis-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px !important;
+  }
+
+  /* Title */
+  h1 {
+    font-size: 20px !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+  }
+
+  /* SUMMARY — force full width */
+  .summary,
+  .summary-card,
+  .summary-box,
+  .main-summary {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 14px 0 !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .summary h2,
+  .summary-card h2 {
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .summary p,
+  .summary-card p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ALL CARDS → VERTICAL STACK */
+  .cards,
+  .cards-container,
+  .info-cards,
+  .details-grid,
+  .grid,
+  .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  /* Individual card reset */
+  .card,
+  .info-card,
+  .detail-card,
+  .box {
+    width: 100% !important;
+  }
+/* =========================
+   MOBILE RESULT PAGE FIX
+   ========================= */
+
+@media(max-width:768px){
+
+.result-page{
+padding:14px;
+max-width:100%;
+}
+
+.page-title{
+font-size:20px;
+text-align:center;
+margin-bottom:12px;
+}
+
+.summary-card{
+padding:12px;
+border-radius:12px;
+margin-bottom:12px;
+}
+
+.card-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:6px;
+}
+
+.card-header h3{
+font-size:14px;
+}
+
+.summary-card p{
+font-size:13px;
+line-height:1.4;
+}
+
+.three-cards{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
+margin-bottom:14px;
+}
+
+.small-card{
+padding:10px;
+border-radius:10px;
+}
+
+.small-card p{
+font-size:12px;
+}
+
+.result-actions{
+text-align:center;
+margin-bottom:14px;
+}
+
+.nextsteps-btn,
+.retry-btn{
+display:block;
+width:100%;
+padding:10px;
+border-radius:8px;
+font-size:14px;
+margin:8px 0;
+}
+
+.indicator-section{
+margin:12px 0;
+}
+
+.disclaimer{
+font-size:11px;
+padding:8px;
+border-radius:6px;
+margin-bottom:12px;
+}
+
+.footer-ribbon{
+padding:6px 10px;
+font-size:11px;
+text-align:center;
+}
+
+}
+/* ===============================
+   MOBILE RESULTS UI FIX
+   =============================== */
+
+@media (max-width: 768px) {
+
+  /* Container */
+  .mobile-results .results-container {
+    padding: 12px !important;
+  }
+
+  /* Page title */
+  .mobile-results .page-title {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+    text-align: center;
+  }
+
+  /* Summary card */
+  .mobile-results .summary-card {
+    padding: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .mobile-results .summary-card h3 {
+    font-size: 15px !important;
+  }
+
+  .mobile-results .summary-card p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Three cards → stacked */
+  .mobile-results .three-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .mobile-results .small-card {
+    padding: 10px !important;
+  }
+
+  .mobile-results .small-card h3 {
+    font-size: 14px !important;
+  }
+
+  .mobile-results .small-card p {
+    font-size: 12px !important;
+  }
+
+  /* Buttons */
+  .mobile-results .nextsteps-btn,
+  .mobile-results .retry-btn {
+    width: 100% !important;
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+
+  /* Risk indicator */
+  .mobile-results .indicator-section {
+    margin: 14px 0 !important;
+  }
+
+  .mobile-results .indicator-section h2 {
+    font-size: 15px !important;
+  }
+
+  /* Disclaimer */
+  .mobile-results .disclaimer {
+    font-size: 11px !important;
+    padding: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Footer compact */
+  .mobile-results .footer-ribbon {
+    padding: 8px !important;
+    font-size: 11px !important;
+    text-align: center !important;
+  }
+
+  .mobile-results .footer-ribbon p {
+    margin: 3px 0 !important;
+  }
+/* RESULTS PAGE WIDTH FIX */
+
+@media (max-width: 768px) {
+
+  section,
+  .results-mobile,
+  .results-container,
+  .content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .three-cards,
+  .cards-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .summary-card,
+  .small-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .risk-bar {
+    max-width: 100%;
+  }
+
+}
+/* HARD RESET: MOBILE RESULT CARDS FIX */
+
+@media (max-width: 768px) {
+
+  /* Kill old layout */
+  .three-cards {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* 2 columns */
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make cards fluid */
+  .small-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force deadline full width */
+  .small-card:last-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Reduce text size */
+  .small-card h3 {
+    font-size: 14px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .small-card p {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+
+}
+/* ===== NUCLEAR FIX FOR RESULTS PAGE MOBILE ===== */
+
+@media (max-width: 768px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .results-container,
+  .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* FORCE GRID ON ALL CARD WRAPPERS */
+  .three-cards,
+  .cards,
+  .card-row,
+  .card-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* FORCE ALL CARDS TO FIT */
+  .small-card,
+  .card,
+  .result-card,
+  .info-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+  }
+
+  /* Make LAST CARD FULL WIDTH (Deadline) */
+  .three-cards > *:last-child,
+  .cards > *:last-child,
+  .card-row > *:last-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Reduce font sizes */
+  .small-card h3,
+  .card h3 {
+    font-size: 14px !important;
+  }
+
+  .small-card p,
+  .card p {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+
+}
+
+/* ===== FINAL MOBILE RESULTS FIX (CLEAN) ===== */
+
+@media (max-width: 768px) {
+
+  .result-page {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .three-cards {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .small-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px !important;
+  }
+
+  .three-cards .small-card:last-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  .small-card h3 {
+    font-size: 14px !important;
+  }
+
+  .small-card p {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+
+}
+/* ===== MOBILE: Compact Analyze Button ===== */
+
+@media (max-width: 768px) {
+
+  .analyze-btn {
+    width: 100% !important;
+    height: auto !important;
+    padding: 6px !important;
+    margin-top: 14px !important;
+  }
+
+  .analyze-btn span {
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+    font-size: 15px !important;
+    box-shadow: none !important;
+  }
+
+}
+
+/* ===== MOBILE: Analyze Button Visual Fix ===== */
+
+@media (max-width: 768px) {
+
+  .analyze-btn {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 16px 0 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .analyze-btn span {
+    width: 100% !important;
+    height: auto !important;
+
+    padding: 12px 0 !important;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+
+    border: none !important;
+    box-shadow: none !important;
+
+    background: #111 !important;
+    color: #fff !important;
+
+    border-radius: 10px !important;
+
+    position: static !important;
+    bottom: auto !important;
+  }
+
+}
+/* ================================
+   DESKTOP RESET – RESULTS PAGE (FIXED)
+   ================================ */
+
+@media (min-width: 769px) {
+
+  .result-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .page-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* Summary */
+  .summary-card {
+    padding: 22px;
+    margin-bottom: 30px;
+  }
+
+  .summary-card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* 3 Cards */
+  .three-cards {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    margin-bottom: 40px;
+  }
+
+  .small-card {
+    padding: 18px !important;
+    min-height: 160px;
+    box-sizing: border-box;
+  }
+
+  .small-card h3 {
+    font-size: 18px;
+  }
+
+  .small-card p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* Buttons */
+  .result-actions {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .nextsteps-btn,
+  .retry-btn {
+    display: inline-block;
+    width: auto;
+    min-width: 240px;
+    padding: 14px 32px;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  /* Risk bar */
+  .gradient-bar {
+    height: 16px;
+    max-width: 700px;
+    margin: 16px auto;
+  }
+
+    /* Disclaimer */
+  .disclaimer {
+    max-width: 900px;
+    margin: 30px auto;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+}
+/* ================================
+   FINAL RESULTS PAGE STABILIZER
+   DO NOT EDIT
+   ================================ */
+
+/* Desktop Layout */
+@media (min-width: 769px) {
+
+  /* Main container */
+  .result-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* Title */
+  .page-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  /* Summary */
+  .summary-card {
+    width: 100%;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  /* Info cards */
+  .three-cards {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  .small-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 18px !important;
+    box-sizing: border-box;
+  }
+
+  /* Buttons */
+  .result-actions {
+    max-width: 720px;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  .nextsteps-btn,
+  .retry-btn {
+    min-width: 240px;
+    padding: 14px 32px;
+    margin: 10px;
+    font-size: 16px;
+  }
+
+  /* Risk bar */
+  .gradient-bar {
+    max-width: 720px;
+    margin: 16px auto;
+    height: 16px;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    max-width: 900px;
+    margin: 30px auto;
+  }
+}
+
+
+/* Mobile Layout (Clean) */
+@media (max-width: 768px) {
+
+  .result-page {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .summary-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* 2 cards + full width deadline */
+  .three-cards {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .small-card:last-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  .small-card {
+    padding: 10px;
+  }
+
+  /* Buttons full width */
+  .nextsteps-btn,
+  .retry-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  .gradient-bar {
+    width: 100%;
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    padding: 10px;
+  }
 }

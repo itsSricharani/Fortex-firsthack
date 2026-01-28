@@ -1,0 +1,131 @@
+/* ===============================
+   RESULTS PAGE OVERRIDE
+   DO NOT TOUCH
+   =============================== */
+
+/* Reset only for results page */
+.result-page * {
+  box-sizing: border-box;
+  max-width: none !important;
+}
+
+/* MAIN WRAPPER */
+.result-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* TITLE */
+.result-page .page-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+/* SUMMARY */
+.result-page .summary-card {
+  width: 100%;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* INFO CARDS */
+.result-page .three-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+.result-page .small-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 18px !important;
+}
+
+/* BUTTONS */
+.result-page .result-actions {
+  max-width: 720px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.result-page .nextsteps-btn,
+.result-page .retry-btn {
+  min-width: 220px;
+  padding: 14px 28px;
+  font-size: 16px;
+  margin: 8px;
+}
+
+/* RISK BAR */
+.result-page .gradient-bar {
+  max-width: 720px;
+  margin: 16px auto;
+  height: 16px;
+}
+
+/* DISCLAIMER */
+.result-page .disclaimer {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 768px) {
+
+  .result-page {
+    padding: 12px;
+  }
+
+  .result-page .page-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .result-page .summary-card {
+    padding: 12px;
+  }
+
+  /* 2 + 1 grid */
+  .result-page .three-cards {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .result-page .small-card:last-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  .result-page .small-card {
+    padding: 10px !important;
+  }
+
+  .result-page .nextsteps-btn,
+  .result-page .retry-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .result-page .disclaimer {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+/* FIX: Prevent button overlapping risk bar */
+
+.result-page .result-actions {
+  position: relative !important;
+  margin-bottom: 40px !important;
+}
+
+.result-page .indicator-section {
+  margin-top: 40px !important;
+}
