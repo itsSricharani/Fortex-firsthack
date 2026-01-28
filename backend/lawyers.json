@@ -1,44 +1,1016 @@
 [
   {
-    "name": "Adv. Rahul Sharma",
-    "state": "Hyderabad",
-    "speciality": "Civil & Property",
-    "phone": "+91-9876543210"
+    "name": "Adv. Aarav Sharma",
+    "state": "Andhra Pradesh",
+    "speciality": "Civil Law",
+    "phone": "+91-7394826150"
   },
   {
-    "name": "Adv. Ananya Rao",
-    "state": "Hyderabad",
+    "name": "Adv. Suresh Reddy",
+    "state": "Andhra Pradesh",
+    "speciality": "Criminal Law",
+    "phone": "+91-6819502743"
+  },
+  {
+    "name": "Adv. Lakshmi Rao",
+    "state": "Andhra Pradesh",
+    "speciality": "Family Law",
+    "phone": "+91-9043826175"
+  },
+  {
+    "name": "Adv. Praveen Kumar",
+    "state": "Andhra Pradesh",
+    "speciality": "Property Law",
+    "phone": "+91-5582047391"
+  },
+  {
+    "name": "Adv. Anjali Devi",
+    "state": "Andhra Pradesh",
+    "speciality": "Contracts",
+    "phone": "+91-7926103845"
+  },
+  {
+    "name": "Adv. Naveen Chandra",
+    "state": "Andhra Pradesh",
+    "speciality": "Corporate Law",
+    "phone": "+91-8463950271"
+  },
+  {
+    "name": "Adv. Divya Sri",
+    "state": "Andhra Pradesh",
     "speciality": "Consumer Law",
-    "phone": "+91-9123456780"
+    "phone": "+91-6391052847"
   },
   {
-    "name": "Adv. Suresh Kumar",
-    "state": "Bangalore",
+    "name": "Adv. Mohan Das",
+    "state": "Andhra Pradesh",
+    "speciality": "Labour Law",
+    "phone": "+91-5702849163"
+  },
+  {
+    "name": "Adv. Sunitha Rani",
+    "state": "Andhra Pradesh",
+    "speciality": "Cyber Law",
+    "phone": "+91-9182647305"
+  },
+  {
+    "name": "Adv. Kiran Raju",
+    "state": "Andhra Pradesh",
+    "speciality": "Banking Law",
+    "phone": "+91-8049372516"
+  },
+  {
+    "name": "Adv. Tashi Norbu",
+    "state": "Arunachal Pradesh",
+    "speciality": "Civil Law",
+    "phone": "+91-7265948130"
+  },
+  {
+    "name": "Adv. Pempa Dolo",
+    "state": "Arunachal Pradesh",
+    "speciality": "Criminal Law",
+    "phone": "+91-6904837521"
+  },
+  {
+    "name": "Adv. Rina Tadu",
+    "state": "Arunachal Pradesh",
+    "speciality": "Family Law",
+    "phone": "+91-8539204618"
+  },
+  {
+    "name": "Adv. Kipa Padi",
+    "state": "Arunachal Pradesh",
+    "speciality": "Property Law",
+    "phone": "+91-5741938206"
+  },
+  {
+    "name": "Adv. Nima Ete",
+    "state": "Arunachal Pradesh",
     "speciality": "Contracts",
-    "phone": "+91-9988776655"
+    "phone": "+91-7428051963"
   },
   {
-    "name": "Adv. Aditya Rawat",
-    "state": "Dehradun",
+    "name": "Adv. Lobsang Tsering",
+    "state": "Arunachal Pradesh",
+    "speciality": "Corporate Law",
+    "phone": "+91-8094625731"
+  },
+  {
+    "name": "Adv. Yama Riba",
+    "state": "Arunachal Pradesh",
+    "speciality": "Consumer Law",
+    "phone": "+91-6349057182"
+  },
+  {
+    "name": "Adv. Gento Padu",
+    "state": "Arunachal Pradesh",
+    "speciality": "Labour Law",
+    "phone": "+91-5928401763"
+  },
+  {
+    "name": "Adv. Chamu Lego",
+    "state": "Arunachal Pradesh",
+    "speciality": "Cyber Law",
+    "phone": "+91-9172846053"
+  },
+  {
+    "name": "Adv. Biri Basar",
+    "state": "Arunachal Pradesh",
+    "speciality": "Banking Law",
+    "phone": "+91-7815934026"
+  },
+  {
+    "name": "Adv. Anupam Das",
+    "state": "Assam",
+    "speciality": "Civil Law",
+    "phone": "+91-7842059317"
+  },
+  {
+    "name": "Adv. Ranjit Bora",
+    "state": "Assam",
+    "speciality": "Criminal Law",
+    "phone": "+91-6924817053"
+  },
+  {
+    "name": "Adv. Pallavi Sharma",
+    "state": "Assam",
+    "speciality": "Family Law",
+    "phone": "+91-8359204716"
+  },
+  {
+    "name": "Adv. Bikash Kalita",
+    "state": "Assam",
+    "speciality": "Property Law",
+    "phone": "+91-5783046921"
+  },
+  {
+    "name": "Adv. Nabanita Deka",
+    "state": "Assam",
     "speciality": "Contracts",
-    "phone": "+91-8954751660"
+    "phone": "+91-7492036184"
   },
   {
-    "name": "Adv. Yash Sharma",
+    "name": "Adv. Jatin Sarma",
+    "state": "Assam",
+    "speciality": "Corporate Law",
+    "phone": "+91-8041963752"
+  },
+  {
+    "name": "Adv. Pooja Hazarika",
+    "state": "Assam",
+    "speciality": "Consumer Law",
+    "phone": "+91-6319857420"
+  },
+  {
+    "name": "Adv. Manas Gogoi",
+    "state": "Assam",
+    "speciality": "Labour Law",
+    "phone": "+91-5901738462"
+  },
+  {
+    "name": "Adv. Ritu Phukan",
+    "state": "Assam",
+    "speciality": "Cyber Law",
+    "phone": "+91-9173046285"
+  },
+  {
+    "name": "Adv. Arup Choudhury",
+    "state": "Assam",
+    "speciality": "Banking Law",
+    "phone": "+91-7816049532"
+  },
+
+  {
+    "name": "Adv. Rahul Kumar",
+    "state": "Bihar",
+    "speciality": "Civil Law",
+    "phone": "+91-7694205831"
+  },
+  {
+    "name": "Adv. Neha Sinha",
+    "state": "Bihar",
+    "speciality": "Family Law",
+    "phone": "+91-6839251740"
+  },
+  {
+    "name": "Adv. Sanjay Prasad",
+    "state": "Bihar",
+    "speciality": "Criminal Law",
+    "phone": "+91-8426017395"
+  },
+  {
+    "name": "Adv. Pankaj Mishra",
+    "state": "Bihar",
+    "speciality": "Property Law",
+    "phone": "+91-5947382061"
+  },
+  {
+    "name": "Adv. Ruchi Verma",
+    "state": "Bihar",
+    "speciality": "Contracts",
+    "phone": "+91-7281945036"
+  },
+  {
+    "name": "Adv. Ashutosh Jha",
+    "state": "Bihar",
+    "speciality": "Corporate Law",
+    "phone": "+91-8016493725"
+  },
+  {
+    "name": "Adv. Monika Roy",
+    "state": "Bihar",
+    "speciality": "Consumer Law",
+    "phone": "+91-6395028147"
+  },
+  {
+    "name": "Adv. Deepak Thakur",
+    "state": "Bihar",
+    "speciality": "Labour Law",
+    "phone": "+91-5704918632"
+  },
+  {
+    "name": "Adv. Shalini Gupta",
+    "state": "Bihar",
+    "speciality": "Cyber Law",
+    "phone": "+91-9162847053"
+  },
+  {
+    "name": "Adv. Rohit Chandra",
+    "state": "Bihar",
+    "speciality": "Banking Law",
+    "phone": "+91-7849352061"
+  },
+
+  {
+    "name": "Adv. Kunal Singh",
+    "state": "Uttar Pradesh",
+    "speciality": "Civil Law",
+    "phone": "+91-7742059184"
+  },
+  {
+    "name": "Adv. Shreya Agarwal",
+    "state": "Uttar Pradesh",
+    "speciality": "Family Law",
+    "phone": "+91-6928415073"
+  },
+  {
+    "name": "Adv. Mohit Verma",
+    "state": "Uttar Pradesh",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395026174"
+  },
+  {
+    "name": "Adv. Pooja Mishra",
+    "state": "Uttar Pradesh",
+    "speciality": "Property Law",
+    "phone": "+91-5781946203"
+  },
+  {
+    "name": "Adv. Aman Saxena",
     "state": "Uttar Pradesh",
     "speciality": "Contracts",
-    "phone": "+91-7638291098"
+    "phone": "+91-7426039158"
   },
-   {
-    "name": "Adv. Anusuya Ghosh",
-    "state": "Mumbai",
+  {
+    "name": "Adv. Ritu Srivastava",
+    "state": "Uttar Pradesh",
+    "speciality": "Corporate Law",
+    "phone": "+91-8064937521"
+  },
+  {
+    "name": "Adv. Nikhil Pandey",
+    "state": "Uttar Pradesh",
+    "speciality": "Consumer Law",
+    "phone": "+91-6398124705"
+  },
+  {
+    "name": "Adv. Sneha Kapoor",
+    "state": "Uttar Pradesh",
+    "speciality": "Labour Law",
+    "phone": "+91-5903847162"
+  },
+  {
+    "name": "Adv. Varun Tiwari",
+    "state": "Uttar Pradesh",
+    "speciality": "Cyber Law",
+    "phone": "+91-9183752046"
+  },
+  {
+    "name": "Adv. Akash Tripathi",
+    "state": "Uttar Pradesh",
+    "speciality": "Banking Law",
+    "phone": "+91-7816493052"
+  },
+  {
+    "name": "Adv. Rakesh Verma",
+    "state": "Chhattisgarh",
+    "speciality": "Civil Law",
+    "phone": "+91-7842951036"
+  },
+  {
+    "name": "Adv. Nisha Sahu",
+    "state": "Chhattisgarh",
+    "speciality": "Family Law",
+    "phone": "+91-6924185730"
+  },
+  {
+    "name": "Adv. Amit Tiwari",
+    "state": "Chhattisgarh",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395206417"
+  },
+  {
+    "name": "Adv. Pooja Mishra",
+    "state": "Chhattisgarh",
+    "speciality": "Property Law",
+    "phone": "+91-5781943026"
+  },
+  {
+    "name": "Adv. Kunal Jain",
+    "state": "Chhattisgarh",
+    "speciality": "Consumer Law",
+    "phone": "+91-9173842065"
+  },
+
+  {
+    "name": "Adv. Sameer Naik",
+    "state": "Goa",
+    "speciality": "Civil Law",
+    "phone": "+91-7462059138"
+  },
+  {
+    "name": "Adv. Rhea D'Souza",
+    "state": "Goa",
+    "speciality": "Family Law",
+    "phone": "+91-6894215073"
+  },
+  {
+    "name": "Adv. Alok Prabhu",
+    "state": "Goa",
+    "speciality": "Property Law",
+    "phone": "+91-8359017426"
+  },
+  {
+    "name": "Adv. Neha Fernandes",
+    "state": "Goa",
     "speciality": "Contracts",
-    "phone": "+91-6123875680"
+    "phone": "+91-5728046391"
   },
-   {
-    "name": "Adv. A Rajesh Kumar ",
-    "state": "Andhra Pradesh",
-    "speciality": "Not Determined",
-    "phone": "+91-7638774098"
+  {
+    "name": "Adv. Ryan D'Cruz",
+    "state": "Goa",
+    "speciality": "Corporate Law",
+    "phone": "+91-9182637450"
+  },
+
+  {
+    "name": "Adv. Hardik Patel",
+    "state": "Gujarat",
+    "speciality": "Civil Law",
+    "phone": "+91-7829461053"
+  },
+  {
+    "name": "Adv. Kinjal Shah",
+    "state": "Gujarat",
+    "speciality": "Family Law",
+    "phone": "+91-6948215730"
+  },
+  {
+    "name": "Adv. Rajesh Mehta",
+    "state": "Gujarat",
+    "speciality": "Criminal Law",
+    "phone": "+91-8402956174"
+  },
+  {
+    "name": "Adv. Pinal Desai",
+    "state": "Gujarat",
+    "speciality": "Property Law",
+    "phone": "+91-5783046192"
+  },
+  {
+    "name": "Adv. Neel Trivedi",
+    "state": "Gujarat",
+    "speciality": "Corporate Law",
+    "phone": "+91-9174652038"
+  },
+
+  {
+    "name": "Adv. Rohit Yadav",
+    "state": "Haryana",
+    "speciality": "Civil Law",
+    "phone": "+91-7926045183"
+  },
+  {
+    "name": "Adv. Anjali Malik",
+    "state": "Haryana",
+    "speciality": "Family Law",
+    "phone": "+91-6819437502"
+  },
+  {
+    "name": "Adv. Deepak Hooda",
+    "state": "Haryana",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207461"
+  },
+  {
+    "name": "Adv. Ritu Bansal",
+    "state": "Haryana",
+    "speciality": "Property Law",
+    "phone": "+91-5742918036"
+  },
+  {
+    "name": "Adv. Aman Singhal",
+    "state": "Haryana",
+    "speciality": "Corporate Law",
+    "phone": "+91-9182634750"
+  },
+
+  {
+    "name": "Adv. Sandeep Thakur",
+    "state": "Himachal Pradesh",
+    "speciality": "Civil Law",
+    "phone": "+91-7839501624"
+  },
+  {
+    "name": "Adv. Neha Sharma",
+    "state": "Himachal Pradesh",
+    "speciality": "Family Law",
+    "phone": "+91-6924185703"
+  },
+  {
+    "name": "Adv. Rakesh Negi",
+    "state": "Himachal Pradesh",
+    "speciality": "Criminal Law",
+    "phone": "+91-8402957163"
+  },
+  {
+    "name": "Adv. Kavita Rana",
+    "state": "Himachal Pradesh",
+    "speciality": "Property Law",
+    "phone": "+91-5781930462"
+  },
+  {
+    "name": "Adv. Nitin Chauhan",
+    "state": "Himachal Pradesh",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832056"
+  },
+
+  {
+    "name": "Adv. Ankit Singh",
+    "state": "Jharkhand",
+    "speciality": "Civil Law",
+    "phone": "+91-7926051834"
+  },
+  {
+    "name": "Adv. Ruchi Verma",
+    "state": "Jharkhand",
+    "speciality": "Family Law",
+    "phone": "+91-6819435027"
+  },
+  {
+    "name": "Adv. Suman Kumar",
+    "state": "Jharkhand",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207164"
+  },
+  {
+    "name": "Adv. Neelam Sinha",
+    "state": "Jharkhand",
+    "speciality": "Property Law",
+    "phone": "+91-5742908361"
+  },
+  {
+    "name": "Adv. Piyush Jha",
+    "state": "Jharkhand",
+    "speciality": "Consumer Law",
+    "phone": "+91-9182634709"
+  },
+
+  {
+    "name": "Adv. Ravi Kiran",
+    "state": "Karnataka",
+    "speciality": "Civil Law",
+    "phone": "+91-7842950163"
+  },
+  {
+    "name": "Adv. Sneha Rao",
+    "state": "Karnataka",
+    "speciality": "Family Law",
+    "phone": "+91-6924187350"
+  },
+  {
+    "name": "Adv. Suresh Gowda",
+    "state": "Karnataka",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201746"
+  },
+  {
+    "name": "Adv. Ananya Shetty",
+    "state": "Karnataka",
+    "speciality": "Corporate Law",
+    "phone": "+91-5781934260"
+  },
+  {
+    "name": "Adv. Nikhil Pai",
+    "state": "Karnataka",
+    "speciality": "Cyber Law",
+    "phone": "+91-9174832659"
+  },
+
+  {
+    "name": "Adv. Arun Menon",
+    "state": "Kerala",
+    "speciality": "Civil Law",
+    "phone": "+91-7839502614"
+  },
+  {
+    "name": "Adv. Asha Nair",
+    "state": "Kerala",
+    "speciality": "Family Law",
+    "phone": "+91-6924185037"
+  },
+  {
+    "name": "Adv. Joseph Thomas",
+    "state": "Kerala",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207163"
+  },
+  {
+    "name": "Adv. Riya Varghese",
+    "state": "Kerala",
+    "speciality": "Property Law",
+    "phone": "+91-5742903618"
+  },
+  {
+    "name": "Adv. Mathew Kurian",
+    "state": "Kerala",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832064"
+  },
+  {
+    "name": "Adv. Rahul Mishra",
+    "state": "Madhya Pradesh",
+    "speciality": "Civil Law",
+    "phone": "+91-7842165039"
+  },
+  {
+    "name": "Adv. Neha Joshi",
+    "state": "Madhya Pradesh",
+    "speciality": "Family Law",
+    "phone": "+91-6928451730"
+  },
+  {
+    "name": "Adv. Ankit Dubey",
+    "state": "Madhya Pradesh",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395072614"
+  },
+  {
+    "name": "Adv. Pooja Malviya",
+    "state": "Madhya Pradesh",
+    "speciality": "Property Law",
+    "phone": "+91-5781946302"
+  },
+  {
+    "name": "Adv. Saurabh Jain",
+    "state": "Madhya Pradesh",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174830265"
+  },
+
+  {
+    "name": "Adv. Rohit Kulkarni",
+    "state": "Maharashtra",
+    "speciality": "Civil Law",
+    "phone": "+91-7829461530"
+  },
+  {
+    "name": "Adv. Sneha Patil",
+    "state": "Maharashtra",
+    "speciality": "Family Law",
+    "phone": "+91-6948215734"
+  },
+  {
+    "name": "Adv. Amit Deshmukh",
+    "state": "Maharashtra",
+    "speciality": "Criminal Law",
+    "phone": "+91-8402956178"
+  },
+  {
+    "name": "Adv. Riya Shah",
+    "state": "Maharashtra",
+    "speciality": "Corporate Law",
+    "phone": "+91-5783046199"
+  },
+  {
+    "name": "Adv. Kunal Mehta",
+    "state": "Maharashtra",
+    "speciality": "Cyber Law",
+    "phone": "+91-9174652031"
+  },
+
+  {
+    "name": "Adv. Thongam Ranjit",
+    "state": "Manipur",
+    "speciality": "Civil Law",
+    "phone": "+91-7916045832"
+  },
+  {
+    "name": "Adv. Nandita Devi",
+    "state": "Manipur",
+    "speciality": "Family Law",
+    "phone": "+91-6839451720"
+  },
+  {
+    "name": "Adv. Ibomcha Singh",
+    "state": "Manipur",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395217046"
+  },
+  {
+    "name": "Adv. Ranjana Chanu",
+    "state": "Manipur",
+    "speciality": "Property Law",
+    "phone": "+91-5742908635"
+  },
+  {
+    "name": "Adv. Lokesh Meitei",
+    "state": "Manipur",
+    "speciality": "Consumer Law",
+    "phone": "+91-9182634708"
+  },
+
+  {
+    "name": "Adv. Hameed Khan",
+    "state": "Meghalaya",
+    "speciality": "Civil Law",
+    "phone": "+91-7842056193"
+  },
+  {
+    "name": "Adv. Alicia Marak",
+    "state": "Meghalaya",
+    "speciality": "Family Law",
+    "phone": "+91-6924187304"
+  },
+  {
+    "name": "Adv. David Khongwir",
+    "state": "Meghalaya",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201749"
+  },
+  {
+    "name": "Adv. Merina Sangma",
+    "state": "Meghalaya",
+    "speciality": "Property Law",
+    "phone": "+91-5781934267"
+  },
+  {
+    "name": "Adv. Brightstar Pala",
+    "state": "Meghalaya",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832652"
+  },
+
+  {
+    "name": "Adv. Lalhmingthanga",
+    "state": "Mizoram",
+    "speciality": "Civil Law",
+    "phone": "+91-7839502619"
+  },
+  {
+    "name": "Adv. Vanlalruati",
+    "state": "Mizoram",
+    "speciality": "Family Law",
+    "phone": "+91-6924185031"
+  },
+  {
+    "name": "Adv. John Zothanmawia",
+    "state": "Mizoram",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207169"
+  },
+  {
+    "name": "Adv. Rohluna Khiangte",
+    "state": "Mizoram",
+    "speciality": "Property Law",
+    "phone": "+91-5742903612"
+  },
+  {
+    "name": "Adv. Lalremruata",
+    "state": "Mizoram",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832068"
+  },
+
+  {
+    "name": "Adv. Temjen Jamir",
+    "state": "Nagaland",
+    "speciality": "Civil Law",
+    "phone": "+91-7816405923"
+  },
+  {
+    "name": "Adv. Aolila Longkumer",
+    "state": "Nagaland",
+    "speciality": "Family Law",
+    "phone": "+91-6938452174"
+  },
+  {
+    "name": "Adv. Keneikhrielie Rio",
+    "state": "Nagaland",
+    "speciality": "Criminal Law",
+    "phone": "+91-8425071936"
+  },
+  {
+    "name": "Adv. Nchumbeni Kikon",
+    "state": "Nagaland",
+    "speciality": "Property Law",
+    "phone": "+91-5763094821"
+  },
+  {
+    "name": "Adv. Vishelie Yhome",
+    "state": "Nagaland",
+    "speciality": "Consumer Law",
+    "phone": "+91-9183752043"
+  },
+
+  {
+    "name": "Adv. Subrat Mohanty",
+    "state": "Odisha",
+    "speciality": "Civil Law",
+    "phone": "+91-7842951683"
+  },
+  {
+    "name": "Adv. Ananya Dash",
+    "state": "Odisha",
+    "speciality": "Family Law",
+    "phone": "+91-6924187356"
+  },
+  {
+    "name": "Adv. Rakesh Behera",
+    "state": "Odisha",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201742"
+  },
+  {
+    "name": "Adv. Ipsita Nayak",
+    "state": "Odisha",
+    "speciality": "Property Law",
+    "phone": "+91-5781934264"
+  },
+  {
+    "name": "Adv. Debashish Rout",
+    "state": "Odisha",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832656"
+  },
+
+  {
+    "name": "Adv. Harpreet Singh",
+    "state": "Punjab",
+    "speciality": "Civil Law",
+    "phone": "+91-7839502684"
+  },
+  {
+    "name": "Adv. Simran Kaur",
+    "state": "Punjab",
+    "speciality": "Family Law",
+    "phone": "+91-6924185034"
+  },
+  {
+    "name": "Adv. Gurpreet Gill",
+    "state": "Punjab",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207165"
+  },
+  {
+    "name": "Adv. Aman Bansal",
+    "state": "Punjab",
+    "speciality": "Property Law",
+    "phone": "+91-5742903615"
+  },
+  {
+    "name": "Adv. Karan Malhotra",
+    "state": "Punjab",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832062"
+  },
+
+  {
+    "name": "Adv. Mahesh Sharma",
+    "state": "Rajasthan",
+    "speciality": "Civil Law",
+    "phone": "+91-7842950137"
+  },
+  {
+    "name": "Adv. Poonam Rathore",
+    "state": "Rajasthan",
+    "speciality": "Family Law",
+    "phone": "+91-6924187359"
+  },
+  {
+    "name": "Adv. Vikram Singh",
+    "state": "Rajasthan",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201748"
+  },
+  {
+    "name": "Adv. Neeraj Goyal",
+    "state": "Rajasthan",
+    "speciality": "Property Law",
+    "phone": "+91-5781934269"
+  },
+  {
+    "name": "Adv. Ritu Choudhary",
+    "state": "Rajasthan",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832654"
+  },
+
+  {
+    "name": "Adv. Tenzing Lepcha",
+    "state": "Sikkim",
+    "speciality": "Civil Law",
+    "phone": "+91-7816493056"
+  },
+  {
+    "name": "Adv. Pema Bhutia",
+    "state": "Sikkim",
+    "speciality": "Family Law",
+    "phone": "+91-6938425174"
+  },
+  {
+    "name": "Adv. Sonam Sherpa",
+    "state": "Sikkim",
+    "speciality": "Criminal Law",
+    "phone": "+91-8425071931"
+  },
+  {
+    "name": "Adv. Karma Tshering",
+    "state": "Sikkim",
+    "speciality": "Property Law",
+    "phone": "+91-5763094826"
+  },
+  {
+    "name": "Adv. Mingma Lepcha",
+    "state": "Sikkim",
+    "speciality": "Consumer Law",
+    "phone": "+91-9183752049"
+  },
+
+  {
+    "name": "Adv. Arjun Iyer",
+    "state": "Tamil Nadu",
+    "speciality": "Civil Law",
+    "phone": "+91-7842056198"
+  },
+  {
+    "name": "Adv. Kavya Subramanian",
+    "state": "Tamil Nadu",
+    "speciality": "Family Law",
+    "phone": "+91-6924187309"
+  },
+  {
+    "name": "Adv. Suresh Krishnan",
+    "state": "Tamil Nadu",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201754"
+  },
+  {
+    "name": "Adv. Meena Raghavan",
+    "state": "Tamil Nadu",
+    "speciality": "Property Law",
+    "phone": "+91-5781934274"
+  },
+  {
+    "name": "Adv. Karthik Raman",
+    "state": "Tamil Nadu",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832661"
+  },
+
+  {
+    "name": "Adv. Sandeep Rao",
+    "state": "Telangana",
+    "speciality": "Civil Law",
+    "phone": "+91-7839502617"
+  },
+  {
+    "name": "Adv. Anusha Reddy",
+    "state": "Telangana",
+    "speciality": "Family Law",
+    "phone": "+91-6924185039"
+  },
+  {
+    "name": "Adv. Naveen Kumar",
+    "state": "Telangana",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207172"
+  },
+  {
+    "name": "Adv. Harsha Vardhan",
+    "state": "Telangana",
+    "speciality": "Property Law",
+    "phone": "+91-5742903621"
+  },
+  {
+    "name": "Adv. Ritu Malhotra",
+    "state": "Telangana",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832071"
+  },
+
+  {
+    "name": "Adv. Suman Deb",
+    "state": "Tripura",
+    "speciality": "Civil Law",
+    "phone": "+91-7842950141"
+  },
+  {
+    "name": "Adv. Rina Chakma",
+    "state": "Tripura",
+    "speciality": "Family Law",
+    "phone": "+91-6924187364"
+  },
+  {
+    "name": "Adv. Subhash Paul",
+    "state": "Tripura",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201759"
+  },
+  {
+    "name": "Adv. Anindita Roy",
+    "state": "Tripura",
+    "speciality": "Property Law",
+    "phone": "+91-5781934279"
+  },
+  {
+    "name": "Adv. Pratik Ghosh",
+    "state": "Tripura",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832666"
+  },
+
+  {
+    "name": "Adv. Alok Rawat",
+    "state": "Uttarakhand",
+    "speciality": "Civil Law",
+    "phone": "+91-7842056202"
+  },
+  {
+    "name": "Adv. Neelam Bisht",
+    "state": "Uttarakhand",
+    "speciality": "Family Law",
+    "phone": "+91-6924187314"
+  },
+  {
+    "name": "Adv. Rakesh Joshi",
+    "state": "Uttarakhand",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395201757"
+  },
+  {
+    "name": "Adv. Pankaj Negi",
+    "state": "Uttarakhand",
+    "speciality": "Property Law",
+    "phone": "+91-5781934277"
+  },
+  {
+    "name": "Adv. Seema Rawat",
+    "state": "Uttarakhand",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832669"
+  },
+
+  {
+    "name": "Adv. Arindam Sen",
+    "state": "West Bengal",
+    "speciality": "Civil Law",
+    "phone": "+91-7839502622"
+  },
+  {
+    "name": "Adv. Riya Chatterjee",
+    "state": "West Bengal",
+    "speciality": "Family Law",
+    "phone": "+91-6924185044"
+  },
+  {
+    "name": "Adv. Soumya Mukherjee",
+    "state": "West Bengal",
+    "speciality": "Criminal Law",
+    "phone": "+91-8395207177"
+  },
+  {
+    "name": "Adv. Debanjan Roy",
+    "state": "West Bengal",
+    "speciality": "Property Law",
+    "phone": "+91-5742903626"
+  },
+  {
+    "name": "Adv. Nandini Basu",
+    "state": "West Bengal",
+    "speciality": "Consumer Law",
+    "phone": "+91-9174832076"
   }
 ]
+
