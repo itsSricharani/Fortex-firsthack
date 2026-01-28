@@ -16,5 +16,29 @@
     "city": "Bangalore",
     "speciality": "Contracts",
     "phone": "+91-9988776655"
+  },
+  {
+    "name": "Adv. Aditya Rawat",
+    "city": "Dehradun",
+    "speciality": "Contracts",
+    "phone": "+91-8954751660"
+  },
+  {
+    "name": "Adv. Yash Sharma",
+    "city": "Uttar Pradesh",
+    "speciality": "Contracts",
+    "phone": "+91-7638291098"
+  },
+   {
+    "name": "Adv. Anusuya Ghosh",
+    "city": "Mumbai",
+    "speciality": "Contracts",
+    "phone": "+91-6123875680"
+  },
+   {
+    "name": "Adv. A Rajesh Kumar ",
+    "city": "Andhra Pradesh",
+    "speciality": "Not Determined",
+    "phone": "+91-7638774098"
   }
 ]

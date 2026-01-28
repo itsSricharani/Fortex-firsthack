@@ -37,9 +37,7 @@
     <li data-i18n="nextsteps_2">Understand the intent of the notice.</li>
     <li data-i18n="nextsteps_3">Check deadlines and note them.</li>
     <li data-i18n="nextsteps_4">Collect supporting documents.</li>
-    <li data-i18n="nextsteps_5">
-      Consult a lawyer if risk is medium or high.
-    </li>
+    <li data-i18n="nextsteps_5">Consult a lawyer if risk is medium or high.</li>
   </ul>
 
   <p data-i18n="nextsteps_disclaimer">
@@ -48,46 +46,42 @@
 
   <hr style="margin:40px 0">
 
-<h2>Find a lawyer near you</h2>
+  <h2>Find a lawyer near you</h2>
 
-<button onclick="showLawyerFinder()" class="lawyer-btn">
-  Find a lawyer
-</button>
-
-<div id="lawyerFinder" style="display:none;margin-top:20px;">
-  <input
-    type="text"
-    id="cityInput"
-    placeholder="Enter your city (e.g. Hyderabad)"
-    class="input"
-  >
-
-  <button onclick="findLawyer()" class="lawyer-btn" style="margin-top:10px">
-    Search
+  <!-- Automatic location button -->
+  <button id="findNearbyLawyer" class="lawyer-btn">
+    Find lawyer near me
   </button>
-</div>
 
-<div id="lawyerResults" style="margin-top:20px;"></div>
+  <!-- Manual input -->
+  <div id="lawyerFinder" style="display:none; margin-top:20px;">
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Enter your city (e.g. Hyderabad)"
+      class="input"
+    >
+    <button id="searchManual" class="lawyer-btn" style="margin-top:10px">
+      Search
+    </button>
+  </div>
+
+  <div id="lawyerResults" style="margin-top:20px;"></div>
 
 </main>
+
+<script src="js/lang.js"></script>
 
 <script>
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
-</script>
 
-<script src="js/lang.js"></script>
+const resultsBox = document.getElementById("lawyerResults");
+const manualDiv = document.getElementById("lawyerFinder");
 
-<script>
-function showLawyerFinder() {
-  document.getElementById("lawyerFinder").style.display = "block";
-}
-
-async function findLawyer() {
-  const city = document.getElementById("cityInput").value.trim();
-  const resultsBox = document.getElementById("lawyerResults");
-
+// Unified function to fetch lawyers
+async function fetchLawyers(city) {
   if (!city) {
     resultsBox.innerHTML = "<p>Please enter a city.</p>";
     return;
@@ -102,10 +96,12 @@ async function findLawyer() {
       body: JSON.stringify({ city })
     });
 
+    if (!res.ok) throw new Error("Failed to fetch");
+
     const data = await res.json();
     resultsBox.innerHTML = "";
 
-    if (data.length === 0) {
+    if (!data || data.length === 0) {
       resultsBox.innerHTML = "<p>No lawyers found in this city.</p>";
       return;
     }
@@ -114,19 +110,69 @@ async function findLawyer() {
       resultsBox.innerHTML += `
         <div class="lawyer-card">
           <b>${l.name}</b><br>
-          ${l.speciality}<br>
+          ${l.speciality || "General"}<br>
           📍 ${l.city}<br>
-          📞 ${l.phone}
+          📞 ${l.phone || "N/A"}
         </div>
       `;
     });
 
   } catch (e) {
     resultsBox.innerHTML = "<p>Failed to load lawyers.</p>";
+    console.error(e);
   }
 }
-</script>
 
+// Manual search
+document.getElementById("searchManual").onclick = () => {
+  const city = document.getElementById("cityInput").value.trim();
+  fetchLawyers(city);
+};
+
+// Show manual input if geolocation fails
+function showManual() {
+  manualDiv.style.display = "block";
+}
+
+// Automatic location
+document.getElementById("findNearbyLawyer").onclick = () => {
+  if (!navigator.geolocation) {
+    alert("Location not supported. Please enter city manually.");
+    showManual();
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    async (pos) => {
+      const lat = pos.coords.latitude;
+      const lon = pos.coords.longitude;
+
+      try {
+        const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+        const data = await res.json();
+
+        const city = data.address.city || data.address.town || data.address.village || "";
+        if (!city) {
+          alert("Could not detect city. Enter manually.");
+          showManual();
+          return;
+        }
+
+        fetchLawyers(city);
+
+      } catch (err) {
+        console.error(err);
+        alert("Failed to detect location. Enter city manually.");
+        showManual();
+      }
+    },
+    () => {
+      alert("Location permission denied. Enter city manually.");
+      showManual();
+    }
+  );
+};
+</script>
 
 </body>
 </html>
