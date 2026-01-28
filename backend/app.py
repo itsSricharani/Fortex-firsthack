@@ -7,7 +7,7 @@ import requests
 import json
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
+CORS(app)
 
 
 
@@ -266,10 +266,8 @@ def analyze_pdf():
     })
 
 
-@app.route("/find-lawyer", methods=["POST", "OPTIONS"])
+@app.route("/find-lawyer", methods=["POST"])
 def find_lawyer():
-    if request.method == "OPTIONS" :
-        return "", 200
     data = request.get_json()
     city = data.get("city", "").lower()
 
