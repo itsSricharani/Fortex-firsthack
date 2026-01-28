@@ -269,16 +269,16 @@ def analyze_pdf():
 @app.route("/find-lawyer", methods=["POST"])
 def find_lawyer():
     data = request.get_json()
-    city = data.get("city", "").lower()
+    state = data.get("state", "").lower()
 
     file_path = os.path.join(os.path.dirname(__file__), "lawyers.json")
 
     with open(file_path, "r") as f:
         lawyers = json.load(f)
 
-    results = [l for l in lawyers if l["city"].lower() == city]
+    results = [l for l in lawyers if l["state"].lower() == state]
     print("FIND LAWYER CALLED")
-    print("CITY:", city)
+    print("STATE:", state)
     print("FILE PATH:", file_path)
 
     return jsonify(results)

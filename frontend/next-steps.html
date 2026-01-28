@@ -57,8 +57,8 @@
   <div id="lawyerFinder" style="display:none; margin-top:20px;">
     <input
       type="text"
-      id="cityInput"
-      placeholder="Enter your city (e.g. Hyderabad)"
+      id="stateInput"
+      placeholder="Enter your state (e.g. Telangana)"
       class="input"
     >
     <button id="searchManual" class="lawyer-btn" style="margin-top:10px">
@@ -80,10 +80,15 @@ window.addEventListener("load", () => {
 const resultsBox = document.getElementById("lawyerResults");
 const manualDiv = document.getElementById("lawyerFinder");
 
+// Show manual input if geolocation fails
+function showManual() {
+  manualDiv.style.display = "block";
+}
+
 // Unified function to fetch lawyers
-async function fetchLawyers(city) {
-  if (!city) {
-    resultsBox.innerHTML = "<p>Please enter a city.</p>";
+async function fetchLawyers(state) {
+  if (!state) {
+    resultsBox.innerHTML = "<p>Please enter a state.</p>";
     return;
   }
 
@@ -93,7 +98,7 @@ async function fetchLawyers(city) {
     const res = await fetch("https://fortex-backend.onrender.com/find-lawyer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ city })
+      body: JSON.stringify({ state })
     });
 
     if (!res.ok) throw new Error("Failed to fetch");
@@ -102,7 +107,8 @@ async function fetchLawyers(city) {
     resultsBox.innerHTML = "";
 
     if (!data || data.length === 0) {
-      resultsBox.innerHTML = "<p>No lawyers found in this city.</p>";
+      resultsBox.innerHTML = "<p>No lawyers found in this state.</p>";
+      showManual(); // allow user to search manually
       return;
     }
 
@@ -111,7 +117,7 @@ async function fetchLawyers(city) {
         <div class="lawyer-card">
           <b>${l.name}</b><br>
           ${l.speciality || "General"}<br>
-          📍 ${l.city}<br>
+          📍 ${l.state}<br>
           📞 ${l.phone || "N/A"}
         </div>
       `;
@@ -125,19 +131,14 @@ async function fetchLawyers(city) {
 
 // Manual search
 document.getElementById("searchManual").onclick = () => {
-  const city = document.getElementById("cityInput").value.trim();
-  fetchLawyers(city);
+  const state = document.getElementById("stateInput").value.trim();
+  fetchLawyers(state);
 };
 
-// Show manual input if geolocation fails
-function showManual() {
-  manualDiv.style.display = "block";
-}
-
-// Automatic location
+// Automatic location only when button clicked
 document.getElementById("findNearbyLawyer").onclick = () => {
   if (!navigator.geolocation) {
-    alert("Location not supported. Please enter city manually.");
+    alert("Location not supported. Please enter state manually.");
     showManual();
     return;
   }
@@ -151,23 +152,24 @@ document.getElementById("findNearbyLawyer").onclick = () => {
         const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
         const data = await res.json();
 
-        const city = data.address.city || data.address.town || data.address.village || "";
-        if (!city) {
-          alert("Could not detect city. Enter manually.");
+        const state = data.address.state || "";
+        console.log("Detected state from geolocation:", state); // <-- log for debug
+        if (!state) {
+          alert("Could not detect state. Enter manually.");
           showManual();
           return;
         }
 
-        fetchLawyers(city);
+        fetchLawyers(state);
 
       } catch (err) {
         console.error(err);
-        alert("Failed to detect location. Enter city manually.");
+        alert("Failed to detect location. Enter state manually.");
         showManual();
       }
     },
     () => {
-      alert("Location permission denied. Enter city manually.");
+      alert("Location permission denied. Enter state manually.");
       showManual();
     }
   );

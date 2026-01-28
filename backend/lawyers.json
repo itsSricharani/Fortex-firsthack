@@ -1,43 +1,43 @@
 [
   {
     "name": "Adv. Rahul Sharma",
-    "city": "Hyderabad",
+    "state": "Hyderabad",
     "speciality": "Civil & Property",
     "phone": "+91-9876543210"
   },
   {
     "name": "Adv. Ananya Rao",
-    "city": "Hyderabad",
+    "state": "Hyderabad",
     "speciality": "Consumer Law",
     "phone": "+91-9123456780"
   },
   {
     "name": "Adv. Suresh Kumar",
-    "city": "Bangalore",
+    "state": "Bangalore",
     "speciality": "Contracts",
     "phone": "+91-9988776655"
   },
   {
     "name": "Adv. Aditya Rawat",
-    "city": "Dehradun",
+    "state": "Dehradun",
     "speciality": "Contracts",
     "phone": "+91-8954751660"
   },
   {
     "name": "Adv. Yash Sharma",
-    "city": "Uttar Pradesh",
+    "state": "Uttar Pradesh",
     "speciality": "Contracts",
     "phone": "+91-7638291098"
   },
    {
     "name": "Adv. Anusuya Ghosh",
-    "city": "Mumbai",
+    "state": "Mumbai",
     "speciality": "Contracts",
     "phone": "+91-6123875680"
   },
    {
     "name": "Adv. A Rajesh Kumar ",
-    "city": "Andhra Pradesh",
+    "state": "Andhra Pradesh",
     "speciality": "Not Determined",
     "phone": "+91-7638774098"
   }
