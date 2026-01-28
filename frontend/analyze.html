@@ -117,24 +117,30 @@ function openCaptcha() {
     document.getElementById("captchaOverlay").style.display = "flex";
     document.getElementById("captchaResult").innerText = "";
     generateCaptcha();
+
     document.querySelectorAll(".captcha-digit").forEach(d => d.value = "");
     document.querySelector(".captcha-digit")?.focus();
 }
 
 function generateCaptcha() {
-    captcha = Math.floor(1000 + Math.random() * 9000).toString();
+    captcha = "";
+    for (let i = 0; i < 4; i++) {
+        captcha += Math.floor(Math.random() * 10);
+    }
     document.getElementById("captchaText").innerText = captcha;
 }
 
 function validateCaptcha() {
     const userInput = getCaptchaValue();
+
     if (userInput === captcha) {
         document.getElementById("captchaOverlay").style.display = "none";
         document.getElementById("loadingOverlay").style.display = "flex";
         startLoadingPhrases();
         analyzeNotice();
     } else {
-        document.getElementById("captchaResult").innerText = "Incorrect code. Please try again.";
+        document.getElementById("captchaResult").innerText =
+            "Incorrect code. Please try again.";
         generateCaptcha();
         document.querySelectorAll(".captcha-digit").forEach(d => d.value = "");
         document.querySelector(".captcha-digit")?.focus();
