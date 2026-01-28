@@ -1,17 +1,16 @@
 (function () {
 
-    let inputs;
-    let verifyFn;
+    let digits = [];
 
     document.addEventListener("DOMContentLoaded", () => {
 
-        inputs = document.querySelectorAll(".captcha-digit");
+        digits = document.querySelectorAll(".captcha-digit");
 
-        inputs.forEach((input, index) => {
+        digits.forEach((box, idx) => {
 
-            input.addEventListener("keydown", (e) => {
+            box.addEventListener("keydown", (e) => {
 
-                // allow only numbers + control keys
+                // Allow only digits and control keys
                 if (
                     !["Backspace", "ArrowLeft", "ArrowRight", "Tab", "Enter"].includes(e.key) &&
                     !/^[0-9]$/.test(e.key)
@@ -19,34 +18,34 @@
                     e.preventDefault();
                 }
 
-                // number typed
+                // Digit typed
                 if (/^[0-9]$/.test(e.key)) {
                     e.preventDefault();
-                    input.value = e.key;
-                    if (index < inputs.length - 1) inputs[index + 1].focus();
+                    box.value = e.key;
+                    if (idx < digits.length - 1) digits[idx + 1].focus();
                 }
 
-                // backspace
+                // Backspace
                 if (e.key === "Backspace") {
                     e.preventDefault();
-                    input.value = "";
-                    if (index > 0) inputs[index - 1].focus();
+                    box.value = "";
+                    if (idx > 0) digits[idx - 1].focus();
                 }
 
-                // arrows
-                if (e.key === "ArrowRight" && index < inputs.length - 1) inputs[index + 1].focus();
-                if (e.key === "ArrowLeft" && index > 0) inputs[index - 1].focus();
+                // Arrow navigation
+                if (e.key === "ArrowRight" && idx < digits.length - 1) digits[idx + 1].focus();
+                if (e.key === "ArrowLeft" && idx > 0) digits[idx - 1].focus();
 
-                // enter = submit
+                // Enter submits captcha
                 if (e.key === "Enter") {
                     window.validateCaptcha();
                 }
             });
         });
 
-        // expose value getter
+        // Expose getter for analyze.html
         window.getCaptchaValue = function () {
-            return Array.from(inputs).map(i => i.value).join("");
+            return Array.from(digits).map(d => d.value).join("");
         };
     });
 
