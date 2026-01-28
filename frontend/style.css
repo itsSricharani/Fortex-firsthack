@@ -1242,3 +1242,54 @@ textarea {
 .guidelines-center .info-box {
   text-align: left;
 }
+
+.upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+    margin-top: 12px;
+
+    background-color: #ffffff;
+    color: #111;
+
+    border: 2px dashed #999;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.upload-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #000;
+}
+
+
+.upload-btn:active {
+    transform: scale(0.97);
+}
+
+
+.remove-file-btn {
+    margin-left: 10px;
+    padding: 8px 14px;
+
+    background-color: #ffecec;
+    color: #b00000;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.remove-file-btn:hover {
+    background-color: #ffd6d6;
+}

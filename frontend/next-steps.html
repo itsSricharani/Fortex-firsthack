@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>What to do next</title>
+  <title data-i18n="nextsteps_page_title">What to do next</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,23 +14,35 @@
       <span id="brandName">NyāyMārg</span>
     </a>
   </div>
+
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" data-i18n="home">Home</a>
+
+    <div class="lang-selector">
+      <span id="languageBtn" class="lang-current">Language</span>
+      <div class="lang-dropdown">
+        <div data-lang="en">English</div>
+        <div data-lang="hi">भाषा</div>
+        <div data-lang="te">భాష</div>
+      </div>
+    </div>
   </nav>
 </header>
 
 <main class="content" style="color:#000">
-  <h1>What you should do next</h1>
+  <h1 data-i18n="nextsteps_title">What you should do next</h1>
 
   <ul>
-    <li>Read the summary carefully.</li>
-    <li>Understand the intent of the notice.</li>
-    <li>Check deadlines and note them.</li>
-    <li>Collect supporting documents.</li>
-    <li>Consult a lawyer if risk is medium or high.</li>
+    <li data-i18n="nextsteps_1">Read the summary carefully.</li>
+    <li data-i18n="nextsteps_2">Understand the intent of the notice.</li>
+    <li data-i18n="nextsteps_3">Check deadlines and note them.</li>
+    <li data-i18n="nextsteps_4">Collect supporting documents.</li>
+    <li data-i18n="nextsteps_5">
+      Consult a lawyer if risk is medium or high.
+    </li>
   </ul>
 
-  <p>
+  <p data-i18n="nextsteps_disclaimer">
     This page is guidance only and does not replace legal advice.
   </p>
 </main>
@@ -40,6 +52,8 @@ window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
 </script>
+
+<script src="js/lang.js"></script>
 
 </body>
 </html>

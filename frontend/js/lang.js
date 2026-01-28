@@ -29,7 +29,43 @@ const translations = {
         summary_title: "Summary",
         intent_title: "Intent",
         deadline_title: "Deadline",
-        risk_title: "Risk"
+        risk_title: "Risk",
+        choose_file: "Choose File",
+        remove_file: "Remove Selected File",
+        captcha_title: "Verify you are human",
+        captcha_verify: "Verify",
+        guidelines_card1_title: "Purpose of this platform",
+        guidelines_card2_title: "Limitations",
+        guidelines_card3_title: "User responsibility",
+        safety_card1_title: "No data storage",
+        safety_card2_title: "Temporary processing",
+        safety_card3_title: "Privacy-first design",
+        results_title: "Legal Notice Analysis",
+        summary_title: "Summary",
+        intent_title: "Intent",
+        risk_title: "Risk",
+        deadline_title: "Deadline",
+        next_steps: "What to do next ?",
+        risk_indicator: "Risk Indicator",
+        try_again: "Try Another Notice !!",
+        results_disclaimer:
+        "⚠️ This analysis is generated using AI and rule-based systems. It is not legal advice. Please consult a qualified lawyer before taking any legal action.",
+        nextsteps_page_title: "What to do next",
+        nextsteps_title: "What you should do next",
+        nextsteps_1: "Read the summary carefully.",
+        nextsteps_2: "Understand the intent of the notice.",
+        nextsteps_3: "Check deadlines and note them.",
+        nextsteps_4: "Collect supporting documents.",
+        nextsteps_5: "Consult a lawyer if risk is medium or high.",
+        nextsteps_disclaimer:
+        "This page is guidance only and does not replace legal advice."
+
+
+
+
+
+
+
     },
     hi: {
         home: "होम",
@@ -59,7 +95,41 @@ const translations = {
         summary_title: "सारांश",
         intent_title: "इरादा",
         deadline_title: "समयसीमा",
-        risk_title: "जोखिम"
+        risk_title: "जोखिम",
+        choose_file: "फ़ाइल चुनें",
+        remove_file: "चयनित फ़ाइल हटाएँ",
+        captcha_title: "कृपया पुष्टि करें कि आप मानव हैं",
+        captcha_verify: "सत्यापित करें",
+        guidelines_card1_title: "इस प्लेटफ़ॉर्म का उद्देश्य",
+        guidelines_card2_title: "सीमाएँ",
+        guidelines_card3_title: "उपयोगकर्ता की ज़िम्मेदारी",
+        safety_card1_title: "कोई डेटा संग्रह नहीं",
+        safety_card2_title: "अस्थायी प्रोसेसिंग",
+        safety_card3_title: "गोपनीयता-प्रथम डिज़ाइन",
+        results_title: "कानूनी नोटिस विश्लेषण",
+        summary_title: "सारांश",
+        intent_title: "इरादा",
+        risk_title: "जोखिम",
+        deadline_title: "समयसीमा",
+        next_steps: "अब क्या करें?",
+        risk_indicator: "जोखिम संकेतक",
+        try_again: "दूसरा नोटिस आज़माएँ !!",
+        results_disclaimer:
+        "⚠️ यह विश्लेषण AI और नियम-आधारित प्रणालियों द्वारा बनाया गया है। यह कानूनी सलाह नहीं है। कोई भी कानूनी कदम उठाने से पहले योग्य वकील से सलाह लें।",
+        nextsteps_page_title: "अगला कदम",
+        nextsteps_title: "आपको आगे क्या करना चाहिए",
+        nextsteps_1: "सारांश को ध्यान से पढ़ें।",
+        nextsteps_2: "नोटिस के उद्देश्य को समझें।",
+        nextsteps_3: "समय सीमा जांचें और नोट करें।",
+        nextsteps_4: "सहायक दस्तावेज़ इकट्ठा करें।",
+        nextsteps_5:
+        "यदि जोखिम मध्यम या उच्च है तो वकील से सलाह लें।",
+        nextsteps_disclaimer:
+        "यह पृष्ठ केवल मार्गदर्शन के लिए है और कानूनी सलाह का विकल्प नहीं है।"
+
+
+
+
     },
     te: {
         home: "హోమ్",
@@ -89,7 +159,43 @@ const translations = {
         summary_title: "సారాంశం",
         intent_title: "ఉద్దేశం",
         deadline_title: "కాల పరిమితి",
-        risk_title: "రిస్క్"
+        risk_title: "రిస్క్",
+        choose_file: "ఫైల్ ఎంచుకోండి",
+        remove_file: "ఎంచుకున్న ఫైల్ తొలగించండి",
+        captcha_title: "దయచేసి మీరు మనిషి అని నిర్ధారించండి",
+        captcha_verify: "ధృవీకరించండి",
+        guidelines_card1_title: "ఈ ప్లాట్‌ఫారం యొక్క ఉద్దేశ్యం",
+        guidelines_card2_title: "పరిమితులు",
+        guidelines_card3_title: "వినియోగదారుల బాధ్యత",
+        safety_card1_title: "డేటా నిల్వ చేయదు",
+        safety_card2_title: "తాత్కాలిక ప్రాసెసింగ్",
+        safety_card3_title: "గోప్యత-మొదటి డిజైన్",
+        results_title: "చట్ట నోటీస్ విశ్లేషణ",
+        summary_title: "సారాంశం",
+        intent_title: "ఉద్దేశం",
+        risk_title: "రిస్క్",
+        deadline_title: "గడువు",
+        next_steps: "తరువాత ఏమి చేయాలి?",
+        risk_indicator: "రిస్క్ సూచిక",
+        try_again: "మరొక నోటీస్ ప్రయత్నించండి !!",
+        results_disclaimer:
+        "⚠️ ఈ విశ్లేషణ AI మరియు నియమాల ఆధారిత వ్యవస్థల ద్వారా రూపొందించబడింది. ఇది చట్ట సలహా కాదు. ఏదైనా చట్టపరమైన చర్య తీసుకునే ముందు అర్హత కలిగిన న్యాయవాదిని సంప్రదించండి.",
+        nextsteps_page_title: "తదుపరి చర్యలు",
+        nextsteps_title: "మీరు తదుపరి ఏమి చేయాలి",
+        nextsteps_1: "సారాంశాన్ని జాగ్రత్తగా చదవండి.",
+        nextsteps_2: "నోటీసు ఉద్దేశాన్ని అర్థం చేసుకోండి.",
+        nextsteps_3: "గడువులను పరిశీలించి గుర్తుంచుకోండి.",
+        nextsteps_4: "మద్దతు పత్రాలను సేకరించండి.",
+        nextsteps_5:
+        "ప్రమాదం మధ్యస్థం లేదా ఎక్కువగా ఉంటే న్యాయవాదిని సంప్రదించండి.",
+        nextsteps_disclaimer:
+        "ఈ పేజీ కేవలం మార్గదర్శకత్వం మాత్రమే; ఇది న్యాయ సలహాకు ప్రత్యామ్నాయం కాదు."
+
+
+
+        
+  
+
     }
 };
 
@@ -155,6 +261,3 @@ document.addEventListener("DOMContentLoaded", () => {
     applyLanguage(currentLang);
     setupLanguageSwitcher();
 });
-
-
-

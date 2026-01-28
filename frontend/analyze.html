@@ -53,24 +53,45 @@
                 name="text"
                 autocomplete="off"
                 class="input">
-            <label class="user-label">Legal Notice goes here</label>
+            <label class="user-label" data-i18n="analyze_placeholder">
+                Legal Notice goes here
+            </label>
+
         </div>
 
         <div class="file-input">
-                <input type="file" id="pdfFile" accept=".pdf" onchange="onFileSelected()">
+                <input
+                    type="file"
+                    id="pdfFile"
+                    accept=".pdf"
+                    hidden
+                    onchange="onFileSelected()"
+>
+
+                <label
+                    for="pdfFile"
+                    class="upload-btn"
+                    data-i18n="choose_file"
+                >
+                    Choose File
+                </label>
+
                 <button
                     type="button"
                     id="removeFileBtn"
                     class="remove-file-btn"
                     onclick="clearSelectedFile()"
                     style="display:none;"
+                    data-i18n="remove_file"
                 >
                     Remove Selected File
                 </button>
+
         </div>
         <button class="analyze-btn" onclick="openCaptcha()">
-            <span>Analyze</span>
+            <span data-i18n="analyze_btn">Analyze</span>
         </button>
+
     </div>
 
     <div class="hero-visual notice-image">
@@ -220,13 +241,48 @@ async function analyzeNotice() {
 </script>
 
 <script>
-const phrases = [
-    "Analyzing your document...",
-    "Checking for inconsistencies...",
-    "Summarizing key points...",
-    "Almost there...",
-    "Preparing your results..."
-];
+
+const loadingPhrases = {
+    en: [
+        "Analyzing your document...",
+        "Checking for inconsistencies...",
+        "Summarizing key points...",
+        "Almost there...",
+        "Preparing your results..."
+    ],
+    hi: [
+        "आपके दस्तावेज़ का विश्लेषण किया जा रहा है...",
+        "असंगतियाँ जाँची जा रही हैं...",
+        "मुख्य बिंदुओं का सार बनाया जा रहा है...",
+        "लगभग पूरा हो गया...",
+        "परिणाम तैयार किए जा रहे हैं..."
+    ],
+    te: [
+        "మీ డాక్యుమెంట్‌ను విశ్లేషిస్తున్నాము...",
+        "అసమానతలను తనిఖీ చేస్తున్నాము...",
+        "ముఖ్య అంశాలను సారాంశం చేస్తున్నాము...",
+        "దాదాపు పూర్తైంది...",
+        "ఫలితాలను సిద్ధం చేస్తున్నాము..."
+    ]
+};
+
+let phraseIndex = 0;
+let phraseInterval;
+
+function startLoadingPhrases() {
+    const lang = localStorage.getItem("lang") || "en";
+    const phrases = loadingPhrases[lang] || loadingPhrases.en;
+
+    phraseInterval = setInterval(() => {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        document.getElementById("loadingPhrase").innerText = phrases[phraseIndex];
+    }, 1500);
+}
+
+function stopLoadingPhrases() {
+    clearInterval(phraseInterval);
+}
+</script>
 
 let phraseIndex = 0;
 let phraseInterval;

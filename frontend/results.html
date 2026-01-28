@@ -28,12 +28,14 @@
 
 <section class="content results-container">
 
-    <h1 class="page-title">Legal Notice Analysis</h1>
+    <h1 class="page-title" data-i18n="results_title">Legal Notice Analysis</h1>
+
 
     <!-- SUMMARY CARD (BIG) -->
     <div class="summary-card">
         <div class="card-header">
-            <h3>Summary</h3>
+            <<h3 data-i18n="summary_title">Summary</h3>
+
             <button class="speaker-btn" aria-hidden="true" onclick="speakText('summary')">🔊</button>
         </div>
         <p id="summary"></p>
@@ -43,7 +45,8 @@
     <div class="three-cards">
         <div class="small-card">
             <div class="card-header">
-                <h3>Intent</h3>
+                <h3 data-i18n="intent_title">Intent</h3>
+
                 <button class="speaker-btn" aria-hidden="true" onclick="speakText('intent')">🔊</button>
             </div>
             <p id="intent"></p>
@@ -51,7 +54,8 @@
 
         <div class="small-card">
             <div class="card-header">
-                <h3>Risk</h3>
+                <h3 data-i18n="risk_title">Risk</h3>
+
                 <button class="speaker-btn" aria-hidden="true" onclick="speakText('risk')">🔊</button>
             </div>
             <p id="risk"></p>
@@ -59,7 +63,8 @@
 
         <div class="small-card">
             <div class="card-header">
-                <h3>Deadline</h3>
+                <h3 data-i18n="deadline_title">Deadline</h3>
+
                 <button class="speaker-btn" aria-hidden="true" onclick="speakText('deadline')">🔊</button>
             </div>
             <p id="deadline"></p>
@@ -67,13 +72,17 @@
     </div>
 
     <div class="next-steps">
-        <a href="next-steps.html" class="nextsteps-btn"> What to do next ?</a>
+        <a href="next-steps.html" class="nextsteps-btn" data-i18n="next_steps">
+            What to do next ?
+        </a>
+
 
     </div>
 
     <!-- RISK INDICATOR -->
     <div class="indicator-section">
-    <h2>Risk Indicator</h2>
+    <h2 data-i18n="risk_indicator">Risk Indicator</h2>
+
     <div class="gradient-bar risk-bar">
         <div class="notch" id="risk-notch"></div>
     </div>
@@ -83,7 +92,10 @@
 
     <!-- TRY AGAIN BUTTON -->
     <div class="retry-section">
-        <a href="analyze.html" class="retry-btn">Try Another Notice !!</a>
+        <a href="analyze.html" class="retry-btn" data-i18n="try_again">
+            Try Another Notice !!
+        </a>
+
     </div>
 
 </section>
@@ -131,11 +143,12 @@ window.addEventListener("load", () => {
 });
 </script>
 
-<div class="disclaimer">
+<div class="disclaimer" data-i18n="results_disclaimer">
     ⚠️ This analysis is generated using AI and rule-based systems.
     It is not legal advice. Please consult a qualified lawyer before
     taking any legal action.
 </div>
+
 
 
 <footer class="footer-ribbon">
