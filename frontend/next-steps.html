@@ -45,6 +45,30 @@
   <p data-i18n="nextsteps_disclaimer">
     This page is guidance only and does not replace legal advice.
   </p>
+
+  <hr style="margin:40px 0">
+
+<h2>Find a lawyer near you</h2>
+
+<button onclick="showLawyerFinder()" class="lawyer-btn">
+  Find a lawyer
+</button>
+
+<div id="lawyerFinder" style="display:none;margin-top:20px;">
+  <input
+    type="text"
+    id="cityInput"
+    placeholder="Enter your city (e.g. Hyderabad)"
+    class="input"
+  >
+
+  <button onclick="findLawyer()" class="lawyer-btn" style="margin-top:10px">
+    Search
+  </button>
+</div>
+
+<div id="lawyerResults" style="margin-top:20px;"></div>
+
 </main>
 
 <script>
@@ -54,6 +78,55 @@ window.addEventListener("load", () => {
 </script>
 
 <script src="js/lang.js"></script>
+
+<script>
+function showLawyerFinder() {
+  document.getElementById("lawyerFinder").style.display = "block";
+}
+
+async function findLawyer() {
+  const city = document.getElementById("cityInput").value.trim();
+  const resultsBox = document.getElementById("lawyerResults");
+
+  if (!city) {
+    resultsBox.innerHTML = "<p>Please enter a city.</p>";
+    return;
+  }
+
+  resultsBox.innerHTML = "<p>Searching lawyers...</p>";
+
+  try {
+    const res = await fetch("https://fortex-backend.onrender.com/find-lawyer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ city })
+    });
+
+    const data = await res.json();
+    resultsBox.innerHTML = "";
+
+    if (data.length === 0) {
+      resultsBox.innerHTML = "<p>No lawyers found in this city.</p>";
+      return;
+    }
+
+    data.forEach(l => {
+      resultsBox.innerHTML += `
+        <div class="lawyer-card">
+          <b>${l.name}</b><br>
+          ${l.speciality}<br>
+          📍 ${l.city}<br>
+          📞 ${l.phone}
+        </div>
+      `;
+    });
+
+  } catch (e) {
+    resultsBox.innerHTML = "<p>Failed to load lawyers.</p>";
+  }
+}
+</script>
+
 
 </body>
 </html>

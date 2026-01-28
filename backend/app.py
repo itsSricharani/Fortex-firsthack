@@ -7,7 +7,9 @@ import requests
 import json
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
+
+
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
@@ -262,6 +264,27 @@ def analyze_pdf():
         "deadline": deadline,
         "risk": risk
     })
+
+
+@app.route("/find-lawyer", methods=["POST", "OPTIONS"])
+def find_lawyer():
+    if request.method == "OPTIONS" :
+        return "", 200
+    data = request.get_json()
+    city = data.get("city", "").lower()
+
+    file_path = os.path.join(os.path.dirname(__file__), "lawyers.json")
+
+    with open(file_path, "r") as f:
+        lawyers = json.load(f)
+
+    results = [l for l in lawyers if l["city"].lower() == city]
+    print("FIND LAWYER CALLED")
+    print("CITY:", city)
+    print("FILE PATH:", file_path)
+
+    return jsonify(results)
+
 
 
 if __name__ == "__main__":

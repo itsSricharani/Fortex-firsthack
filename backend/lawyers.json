@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Adv. Rahul Sharma",
+    "city": "Hyderabad",
+    "speciality": "Civil & Property",
+    "phone": "+91-9876543210"
+  },
+  {
+    "name": "Adv. Ananya Rao",
+    "city": "Hyderabad",
+    "speciality": "Consumer Law",
+    "phone": "+91-9123456780"
+  },
+  {
+    "name": "Adv. Suresh Kumar",
+    "city": "Bangalore",
+    "speciality": "Contracts",
+    "phone": "+91-9988776655"
+  }
+]
