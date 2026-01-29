@@ -70,113 +70,61 @@
 <script src="js/lang.js"></script>
 
 <script>
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
-
 const resultsBox = document.getElementById("lawyerResults");
-const manualDiv = document.getElementById("lawyerFinder");
 
-// Show manual input if geolocation fails
-function showManual() {
-  manualDiv.style.display = "block";
-}
-
-// Unified function to fetch lawyers (case-insensitive)
-async function fetchLawyers(inputState) {
-  if (!inputState) {
-    resultsBox.innerHTML = "<p>Please enter a state.</p>";
-    return;
-  }
-
-  const state = inputState.trim().toLowerCase();
-  console.log("Fetching lawyers for state:", state); // <-- debug
-
-  resultsBox.innerHTML = "<p>Searching lawyers...</p>";
-
-  try {
-    const res = await fetch("https://fortex-backend.onrender.com/find-lawyer", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ state })
-    });
-
-    if (!res.ok) throw new Error("Failed to fetch");
-
-    const data = await res.json();
-    resultsBox.innerHTML = "";
-
-    if (!data || data.length === 0) {
-      resultsBox.innerHTML = "<p>No lawyers found in this state.</p>";
-      showManual();
-      return;
-    }
-
-    console.log("Returned lawyers:", data); // <-- debug
-
-    data.forEach(l => {
-      resultsBox.innerHTML += `
-        <div class="lawyer-card">
-          <b>${l.name}</b><br>
-          ${l.speciality || "General"}<br>
-          📍 ${l.state}<br>
-          📞 ${l.phone || "N/A"}
-        </div>
-      `;
-    });
-
-  } catch (e) {
-    resultsBox.innerHTML = "<p>Failed to load lawyers.</p>";
-    console.error(e);
-  }
-}
-
-// Manual search
-document.getElementById("searchManual").onclick = () => {
-  const stateInput = document.getElementById("stateInput").value;
-  fetchLawyers(stateInput);
-};
-
-// Automatic location only when button clicked
 document.getElementById("findNearbyLawyer").onclick = () => {
   if (!navigator.geolocation) {
-    alert("Location not supported. Please enter state manually.");
-    showManual();
+    alert("Geolocation not supported");
     return;
   }
 
-  navigator.geolocation.getCurrentPosition(
-    async (pos) => {
-      const lat = pos.coords.latitude;
-      const lon = pos.coords.longitude;
+  resultsBox.innerHTML = "<p>Detecting location...</p>";
 
-      try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
-        const data = await res.json();
+  navigator.geolocation.getCurrentPosition(async (pos) => {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
 
-        const detectedState = (data.address.state || "").trim();
-        console.log("Detected state from geolocation:", detectedState); // <-- debug
-        if (!detectedState) {
-          alert("Could not detect state. Enter manually.");
-          showManual();
-          return;
-        }
+    console.log("Lat:", lat, "Lng:", lng);
 
-        fetchLawyers(detectedState);
+    resultsBox.innerHTML = "<p>Searching lawyers...</p>";
 
-      } catch (err) {
-        console.error(err);
-        alert("Failed to detect location. Enter state manually.");
-        showManual();
+    try {
+      const res = await fetch("https://fortex-backend.onrender.com/find-lawyer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lat, lng })
+      });
+
+      const data = await res.json();
+      resultsBox.innerHTML = "";
+
+      if (!data.length) {
+        resultsBox.innerHTML = "<p>No lawyers found nearby.</p>";
+        return;
       }
-    },
-    () => {
-      alert("Location permission denied. Enter state manually.");
-      showManual();
+
+      data.forEach(l => {
+        resultsBox.innerHTML += `
+          <div class="lawyer-card">
+            <b>${l.name}</b><br>
+            ${l.category || "Lawyer"}<br>
+            📍 ${l.address || "N/A"}<br>
+            📞 ${l.phone || "N/A"}
+          </div>
+        `;
+      });
+
+    } catch (e) {
+      resultsBox.innerHTML = "<p>Failed to load lawyers.</p>";
+      console.error(e);
     }
-  );
+  },
+  () => {
+    alert("Location permission denied");
+  });
 };
 </script>
+
 
 </body>
 </html>
