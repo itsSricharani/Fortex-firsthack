@@ -32,7 +32,6 @@
     <h1 class="page-title" data-i18n="results_title">Legal Notice Analysis</h1>
 
 
-    <!-- SUMMARY CARD (BIG) -->
     <div class="summary-card">
         <div class="card-header">
             <<h3 data-i18n="summary_title">Summary</h3>
@@ -42,7 +41,7 @@
         <p id="summary"></p>
     </div>
 
-    <!-- 3 SMALL CARDS -->
+  
     <div class="three-cards">
         <div class="small-card">
             <div class="card-header">
@@ -80,7 +79,7 @@
 
     </div>
 
-    <!-- RISK INDICATOR -->
+  
     <div class="indicator-section">
     <h2 data-i18n="risk_indicator">Risk Indicator</h2>
 
@@ -91,7 +90,7 @@
 
 
 
-    <!-- TRY AGAIN BUTTON -->
+    
     <div class="retry-section">
         <a href="analyze.html" class="retry-btn" data-i18n="try_again">
             Try Another Notice !!
@@ -119,13 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("deadline").innerText = data.deadline || "Not found";
     document.getElementById("risk").innerText = data.risk || "Unknown";
 
-    // IMPORTANT: set indicators AFTER text is filled
+    
     setIndicators(data.risk, data.deadline);
 });
 
 function setIndicators(risk, deadlineText) {
 
-    // ---------- Risk bar ----------
+
     const riskNotch = document.getElementById("risk-notch");
     if (!riskNotch) return;
 

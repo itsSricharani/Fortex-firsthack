@@ -12,10 +12,6 @@ function getSpeechLang() {
   return "en-US";
 }
 
-/**
- * Reads ONLY the element with the given ID
- * (summary / intent / risk / deadline)
- */
 function speakText(id) {
   speechSynthesis.cancel();
 

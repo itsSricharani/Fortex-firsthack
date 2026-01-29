@@ -175,6 +175,6 @@ The project serves as a strong foundation for future development into a scalable
 
 🔗 Project Links
 
-GitHub Repository: (Add Link)
+GitHub Repository:https://github.com/itsSricharani/Fortex-firsthack.git
 
-Live Website: (Add Link)
+Live Website: https://nyaymaarg.netlify.app/

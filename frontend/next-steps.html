@@ -48,10 +48,10 @@
 
   <h2>Find a lawyer near you</h2>
 
-  <!-- Automatic location button -->
+ 
   <button id="findNearbyLawyer" class="lawyer-btn">Find lawyer near me</button>
 
-  <!-- Manual input -->
+ 
   <div id="lawyerFinder" style="display:none; margin-top:20px;">
     <input
       type="text"
@@ -77,12 +77,11 @@ window.addEventListener("load", () => {
 const resultsBox = document.getElementById("lawyerResults");
 const manualDiv = document.getElementById("lawyerFinder");
 
-// Show manual input if geolocation fails
 function showManual() {
   manualDiv.style.display = "block";
 }
 
-// Unified function to fetch lawyers (case-insensitive)
+
 async function fetchLawyers(inputState) {
   if (!inputState) {
     resultsBox.innerHTML = "<p>Please enter a state.</p>";
@@ -90,7 +89,7 @@ async function fetchLawyers(inputState) {
   }
 
   const state = inputState.trim().toLowerCase();
-  console.log("Fetching lawyers for state:", state); // <-- debug
+  console.log("Fetching lawyers for state:", state);
 
   resultsBox.innerHTML = "<p>Searching lawyers...</p>";
 
@@ -112,7 +111,7 @@ async function fetchLawyers(inputState) {
       return;
     }
 
-    console.log("Returned lawyers:", data); // <-- debug
+    console.log("Returned lawyers:", data);
 
     data.forEach(l => {
       resultsBox.innerHTML += `
@@ -131,13 +130,13 @@ async function fetchLawyers(inputState) {
   }
 }
 
-// Manual search
+
 document.getElementById("searchManual").onclick = () => {
   const stateInput = document.getElementById("stateInput").value;
   fetchLawyers(stateInput);
 };
 
-// Automatic location only when button clicked
+
 document.getElementById("findNearbyLawyer").onclick = () => {
   if (!navigator.geolocation) {
     alert("Location not supported. Please enter state manually.");
@@ -155,7 +154,7 @@ document.getElementById("findNearbyLawyer").onclick = () => {
         const data = await res.json();
 
         const detectedState = (data.address.state || "").trim();
-        console.log("Detected state from geolocation:", detectedState); // <-- debug
+        console.log("Detected state from geolocation:", detectedState); 
         if (!detectedState) {
           alert("Could not detect state. Enter manually.");
           showManual();

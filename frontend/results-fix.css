@@ -1,15 +1,10 @@
-/* ===============================
-   RESULTS PAGE OVERRIDE
-   DO NOT TOUCH
-   =============================== */
 
-/* Reset only for results page */
 .result-page * {
   box-sizing: border-box;
   max-width: none !important;
 }
 
-/* MAIN WRAPPER */
+
 .result-page {
   width: 100%;
   max-width: 1100px;
@@ -17,21 +12,20 @@
   padding: 0 24px;
 }
 
-/* TITLE */
+
 .result-page .page-title {
   text-align: center;
   font-size: 32px;
   margin-bottom: 24px;
 }
 
-/* SUMMARY */
 .result-page .summary-card {
   width: 100%;
   padding: 24px;
   margin-bottom: 24px;
 }
 
-/* INFO CARDS */
+
 .result-page .three-cards {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
@@ -45,7 +39,7 @@
   padding: 18px !important;
 }
 
-/* BUTTONS */
+
 .result-page .result-actions {
   max-width: 720px;
   margin: 40px auto;
@@ -60,22 +54,18 @@
   margin: 8px;
 }
 
-/* RISK BAR */
 .result-page .gradient-bar {
   max-width: 720px;
   margin: 16px auto;
   height: 16px;
 }
 
-/* DISCLAIMER */
 .result-page .disclaimer {
   max-width: 900px;
   margin: 30px auto;
 }
 
-/* ===============================
-   MOBILE
-   =============================== */
+
 
 @media (max-width: 768px) {
 
@@ -92,7 +82,7 @@
     padding: 12px;
   }
 
-  /* 2 + 1 grid */
+
   .result-page .three-cards {
     grid-template-columns: 1fr 1fr !important;
     gap: 10px !important;
@@ -119,7 +109,7 @@
     padding: 10px;
   }
 }
-/* FIX: Prevent button overlapping risk bar */
+
 
 .result-page .result-actions {
   position: relative !important;

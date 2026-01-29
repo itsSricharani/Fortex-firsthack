@@ -1,4 +1,3 @@
-/* GLOBAL MOBILE OVERFLOW FIX */
 html, body {
   width: 100%;
   overflow-x: hidden;
@@ -1490,18 +1489,16 @@ textarea {
   font-size: 14px;
   color: #dc2626;
 }
-/* ============================
-   MOBILE HOTFIX (HACKATHON)
-   ============================ */
+
 
 @media (max-width: 768px) {
 
-  /* Prevent horizontal scroll */
+  
   body {
     overflow-x: hidden;
   }
 
-  /* Main container full width */
+
   .container,
   .main,
   .wrapper,
@@ -1513,7 +1510,7 @@ textarea {
     padding-right: 12px !important;
   }
 
-  /* Header fix */
+ 
   header,
   nav,
   .navbar {
@@ -1529,7 +1526,6 @@ textarea {
     padding: 6px 0 !important;
   }
 
-  /* Hide hero image */
   .hero-image,
   .hero-img,
   .hero-right,
@@ -1537,7 +1533,6 @@ textarea {
     display: none !important;
   }
 
-  /* Hero text */
   h1 {
     font-size: 26px !important;
     line-height: 1.2 !important;
@@ -1553,7 +1548,7 @@ textarea {
     line-height: 1.5 !important;
   }
 
-  /* Buttons */
+  
   button,
   .btn,
   .cta,
@@ -1564,7 +1559,7 @@ textarea {
     margin: 5px 0 !important;
   }
 
-  /* Forms stack */
+
   form,
   .form-group,
   .input-group {
@@ -1580,7 +1575,7 @@ textarea {
     padding: 10px !important;
   }
 
-  /* Cards / boxes */
+ 
   .card,
   .box,
   .panel,
@@ -1590,14 +1585,11 @@ textarea {
   }
 
 }
-/* ================================
-   MOBILE FIX v2 (STABLE)
-   For NyayMarg - Hackathon Safe
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* Kill all overflow */
+  
   * {
     max-width: 100% !important;
   }
@@ -1606,7 +1598,7 @@ textarea {
     overflow-x: hidden !important;
   }
 
-  /* HEADER */
+
   .top-bar {
     display: flex !important;
     flex-direction: column !important;
@@ -1622,7 +1614,7 @@ textarea {
     margin-top: 6px !important;
   }
 
-  /* HERO RESET */
+
   .hero {
     display: flex !important;
     flex-direction: column !important;
@@ -1632,7 +1624,7 @@ textarea {
     position: relative !important;
   }
 
-  /* Remove all decorative shapes */
+ 
   .hero::before,
   .hero::after,
   .hero *::before,
@@ -1641,14 +1633,13 @@ textarea {
     content: none !important;
   }
 
-  /* Remove weird backgrounds */
+
   .hero-text,
   .hero-text > div {
     background: none !important;
     box-shadow: none !important;
   }
 
-  /* TEXT */
   .hero-text {   
     width: 100% !important;
     position: static !important;
@@ -1667,7 +1658,7 @@ textarea {
     margin: 10px auto !important;
   }
 
-  /* BUTTON GROUP */
+ 
   .hero-text > div {
     display: flex !important;
     flex-direction: column !important;
@@ -1684,14 +1675,14 @@ textarea {
     transform: none !important;
   }
 
-  /* REMOVE IMAGE */
+
   .hero-visual,
   .notice-image,
   .justice-img {
     display: none !important;
   }
 
-  /* FEATURES */
+ 
   .feature-section {
     padding: 22px 12px !important;
     text-align: center !important;
@@ -1705,7 +1696,7 @@ textarea {
     font-size: 14px !important;
   }
 
-  /* FOOTER */
+ 
   .footer-ribbon {
     text-align: center !important;
     padding: 15px 10px !important;
@@ -1713,13 +1704,11 @@ textarea {
   }
 
 }
-/* ================================
-   MOBILE POLISH v3 (FINAL)
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* HEADER: Logo Left, Nav Right */
+ 
   .top-bar {
     flex-direction: row !important;
     justify-content: space-between !important;
@@ -1744,7 +1733,7 @@ textarea {
     padding: 4px 6px !important;
   }
 
-  /* HERO: Center vertically */
+
   .hero {
     min-height: 85vh !important;
     justify-content: center !important;
@@ -1756,17 +1745,17 @@ textarea {
     margin-top: -20px !important;
   }
 
-  /* Title spacing */
+ 
   .hero-title {
     margin-bottom: 14px !important;
   }
 
-  /* Paragraph spacing */
+ 
   .hero-text p {
     margin-bottom: 18px !important;
   }
 
-  /* BUTTONS: Smaller + Clean */
+ 
   .try-btn {
     font-size: 14px !important;
     padding: 10px 14px !important;
@@ -1781,20 +1770,18 @@ textarea {
     min-width: 45px !important;
   }
 
-  /* Button group tighter */
+
   .hero-text > div {
     gap: 8px !important;
     margin-top: 5px !important;
   }
 
 }
-/* ================================
-   MOBILE POLISH v4 (ALIGNMENT FIX)
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* HEADER: Push logo extreme left */
+  
   .top-bar {
     padding-left: 6px !important;
     padding-right: 6px !important;
@@ -1812,7 +1799,6 @@ textarea {
     height: 28px !important;
   }
 
-  /* NAVBAR: tighter + readable */
   nav {
     gap: 6px !important;
   }
@@ -1823,12 +1809,11 @@ textarea {
     padding: 3px 4px !important;
   }
 
-  /* HERO: Move content slightly down */
+  
   .hero-text {
     margin-top: 10px !important;
   }
 
-  /* BUTTON GROUP: horizontal like desktop */
   .hero-text > div {
     flex-direction: row !important;
     justify-content: center !important;
@@ -1848,25 +1833,23 @@ textarea {
     padding: 0 !important;
   }
 
-  /* Center hero better */
+  
   .hero {
     padding-top: 25px !important;
   }
 
 }
-/* ================================
-   MOBILE POLISH v5 (HEADER FINAL)
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* Force header single line */
+  
   .top-bar {
     flex-wrap: nowrap !important;
     height: 52px !important;
   }
 
-  /* Make logo always visible */
+  
   .logo-wrap {
     display: flex !important;
     align-items: center !important;
@@ -1884,7 +1867,7 @@ textarea {
     margin-right: 4px !important;
   }
 
-  /* Navbar single row */
+ 
   nav {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -1901,7 +1884,7 @@ textarea {
     flex-shrink: 0 !important;
   }
 
-  /* Reduce wasted space */
+  
   .hero {
     min-height: 75vh !important;
     padding-top: 10px !important;
@@ -1911,21 +1894,17 @@ textarea {
     margin-top: -10px !important;
   }
 
-  /* Move heading up */
+
   .hero-title {
     margin-top: 0 !important;
   }
 
 }
-/* ================================
-   MOBILE NAV FIX v6 (2-ROW RIGHT)
-   Home + Language on top
-   Guidelines + Safety below
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* Header layout */
+  
   .top-bar {
     display: grid !important;
     grid-template-columns: auto 1fr !important;
@@ -1934,7 +1913,7 @@ textarea {
     height: auto !important;
   }
 
-  /* Logo left */
+
   .logo {
     grid-row: 1 / span 2 !important;
     grid-column: 1 !important;
@@ -1954,7 +1933,7 @@ textarea {
     height: 24px !important;
   }
 
-  /* Nav right: 2 rows */
+ 
   nav {
     grid-column: 2 !important;
     display: grid !important;
@@ -1963,13 +1942,13 @@ textarea {
     justify-content: end !important;
   }
 
-  /* First row: Home + Language */
+
   nav a[href*="index"],
   .lang-selector {
     grid-row: 1 !important;
   }
 
-  /* Second row: Guidelines + Safety */
+  
   nav a[href*="guidelines"],
   nav a[href*="safety"] {
     grid-row: 2 !important;
@@ -1983,13 +1962,11 @@ textarea {
   }
 
 }
-/* ================================
-   MOBILE DROPDOWN FIX (NO CLIP)
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* Allow dropdown to overflow */
+ 
   .top-bar {
     overflow: visible !important;
   }
@@ -2015,9 +1992,6 @@ textarea {
   }
 
 }
-/* ================================
-   MOBILE DROPDOWN ALIGN FIX
-   ================================ */
 
 @media (max-width: 768px) {
 
@@ -2035,7 +2009,7 @@ textarea {
     display: none;
   }
 
-  /* Show dropdown on hover/click */
+ 
   .lang-selector:hover .lang-dropdown,
   .lang-selector:focus-within .lang-dropdown {
     display: block !important;
@@ -2053,14 +2027,12 @@ textarea {
 
 }
 
-/* ================================
-   MOBILE DROPDOWN COLOR FIX
-   ================================ */
+
 
 @media (max-width: 768px) {
 
   .lang-dropdown {
-    background: #2f3f46 !important;   /* match navbar */
+    background: #2f3f46 !important;   
     color: #ffffff !important;
     border: 1px solid rgba(255,255,255,0.1) !important;
   }
@@ -2074,9 +2046,6 @@ textarea {
   }
 
 }
-/* ================================
-   MOBILE FOOTER CLEANUP
-   ================================ */
 
 @media (max-width: 768px) {
 
@@ -2092,26 +2061,23 @@ textarea {
     display: block !important;
   }
 
-  /* Remove excessive wave height */
   .footer-ribbon::before,
   .footer-ribbon::after {
     display: none !important;
   }
 
-  /* Stack links cleanly */
+
   .footer-ribbon a {
     display: inline-block !important;
     margin: 0 4px !important;
   }
 
 }
-/* ================================
-   MOBILE CONTENT + FOOTER COMPACT
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* Feature Sections */
+ 
   .feature-section {
     padding: 28px 18px !important;
     text-align: center;
@@ -2130,12 +2096,11 @@ textarea {
     margin: 0 !important;
   }
 
-  /* Remove excess gap between sections */
   .feature-section + .feature-section {
     margin-top: 0 !important;
   }
 
-  /* Footer Compact */
+
   .footer-ribbon {
     padding: 14px 10px !important;
     font-size: 12px !important;
@@ -2147,19 +2112,16 @@ textarea {
     margin: 4px 0 !important;
   }
 
-  /* Prevent footer from looking tall */
+ 
   .footer-ribbon br {
     display: none;
   }
 
 }
-/* ================================
-   MOBILE COMPACT UI v2
-   ================================ */
+
 
 @media (max-width: 768px) {
 
-  /* ===== Feature / Card Sections ===== */
 
   .feature-section {
     padding: 22px 14px !important;
@@ -2181,18 +2143,18 @@ textarea {
     opacity: 0.95;
   }
 
-  /* Reduce space between cards */
+
   .feature-section + .feature-section {
     margin-top: -4px !important;
   }
 
-  /* Alternate background sections */
+  
   .feature-section.alt {
     padding: 20px 14px !important;
   }
 
 
-  /* ===== Footer Compact ===== */
+
 
   .footer-ribbon {
     padding: 10px 8px !important;
@@ -2206,15 +2168,13 @@ textarea {
     padding: 0 !important;
   }
 
-  /* Remove excess height */
+
   .footer-ribbon * {
     max-width: 100% !important;
   }
 
 }
-/* ================================
-   MOBILE FOOTER ULTRA COMPACT
-   ================================ */
+
 
 @media (max-width: 768px) {
 
@@ -2231,16 +2191,14 @@ textarea {
     line-height: 1.15 !important;
   }
 
-  /* Kill extra spacing from children */
+
   .footer-ribbon * {
     margin: 0 !important;
     padding: 0 !important;
   }
 
 }
-/* ================================
-   MOBILE FOOTER HARD RESET
-   ================================ */
+
 
 @media (max-width: 768px) {
 
@@ -2267,13 +2225,10 @@ textarea {
   }
 
 }
-/* ================================
-   MOBILE COMPACT + CLEAN SPACING
-   ================================ */
 
 @media (max-width: 768px) {
 
-  /* ---------- Feature Sections ---------- */
+ 
 
   .feature-section {
     padding: 18px 14px !important;
@@ -2294,14 +2249,14 @@ textarea {
     color: #333;
   }
 
-  /* Reduce gap between cards */
+
   .feature-section + .feature-section {
     margin-top: 8px !important;
   }
 
 
 
-  /* ---------- Footer Refinement ---------- */
+
 
   footer.footer-ribbon {
     padding: 10px 12px !important;
@@ -2315,7 +2270,7 @@ textarea {
     line-height: 1.4 !important;
   }
 
-  /* Make links look neat */
+
   footer.footer-ribbon a {
     color: #fff;
     text-decoration: none;
@@ -2323,13 +2278,10 @@ textarea {
   }
 
 }
-/* ================================
-   HARD RESET : MOBILE RESULTS UI
-   ================================ */
 
 @media screen and (max-width: 600px) {
 
-  /* Kill horizontal overflow */
+ 
   * {
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -2339,7 +2291,6 @@ textarea {
     overflow-x: hidden !important;
   }
 
-  /* Main wrapper */
   main,
   .results-container,
   .result-container,
@@ -2349,14 +2300,13 @@ textarea {
     padding: 12px !important;
   }
 
-  /* Title */
+
   h1 {
     font-size: 20px !important;
     text-align: center !important;
     margin: 10px 0 !important;
   }
 
-  /* SUMMARY — force full width */
   .summary,
   .summary-card,
   .summary-box,
@@ -2380,7 +2330,7 @@ textarea {
     line-height: 1.4 !important;
   }
 
-  /* ALL CARDS → VERTICAL STACK */
+
   .cards,
   .cards-container,
   .info-cards,
@@ -2392,16 +2342,13 @@ textarea {
     gap: 10px !important;
   }
 
-  /* Individual card reset */
+
   .card,
   .info-card,
   .detail-card,
   .box {
     width: 100% !important;
   }
-/* =========================
-   MOBILE RESULT PAGE FIX
-   ========================= */
 
 @media(max-width:768px){
 
@@ -2487,25 +2434,22 @@ text-align:center;
 }
 
 }
-/* ===============================
-   MOBILE RESULTS UI FIX
-   =============================== */
+
 
 @media (max-width: 768px) {
 
-  /* Container */
+
   .mobile-results .results-container {
     padding: 12px !important;
   }
 
-  /* Page title */
+ 
   .mobile-results .page-title {
     font-size: 20px !important;
     margin-bottom: 10px !important;
     text-align: center;
   }
 
-  /* Summary card */
   .mobile-results .summary-card {
     padding: 12px !important;
     margin-bottom: 12px !important;
@@ -2520,7 +2464,7 @@ text-align:center;
     line-height: 1.4 !important;
   }
 
-  /* Three cards → stacked */
+ 
   .mobile-results .three-cards {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -2539,7 +2483,6 @@ text-align:center;
     font-size: 12px !important;
   }
 
-  /* Buttons */
   .mobile-results .nextsteps-btn,
   .mobile-results .retry-btn {
     width: 100% !important;
@@ -2547,7 +2490,7 @@ text-align:center;
     font-size: 13px !important;
   }
 
-  /* Risk indicator */
+
   .mobile-results .indicator-section {
     margin: 14px 0 !important;
   }
@@ -2556,14 +2499,12 @@ text-align:center;
     font-size: 15px !important;
   }
 
-  /* Disclaimer */
   .mobile-results .disclaimer {
     font-size: 11px !important;
     padding: 10px !important;
     line-height: 1.4 !important;
   }
 
-  /* Footer compact */
   .mobile-results .footer-ribbon {
     padding: 8px !important;
     font-size: 11px !important;
@@ -2573,7 +2514,7 @@ text-align:center;
   .mobile-results .footer-ribbon p {
     margin: 3px 0 !important;
   }
-/* RESULTS PAGE WIDTH FIX */
+
 
 @media (max-width: 768px) {
 
@@ -2604,11 +2545,10 @@ text-align:center;
   }
 
 }
-/* HARD RESET: MOBILE RESULT CARDS FIX */
 
 @media (max-width: 768px) {
 
-  /* Kill old layout */
+
   .three-cards {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important; /* 2 columns */
@@ -2618,7 +2558,6 @@ text-align:center;
     box-sizing: border-box !important;
   }
 
-  /* Make cards fluid */
   .small-card {
     width: 100% !important;
     max-width: 100% !important;
@@ -2627,12 +2566,11 @@ text-align:center;
     box-sizing: border-box !important;
   }
 
-  /* Force deadline full width */
+
   .small-card:last-child {
     grid-column: 1 / -1 !important;
   }
 
-  /* Reduce text size */
   .small-card h3 {
     font-size: 14px !important;
     margin-bottom: 6px !important;
@@ -2644,11 +2582,11 @@ text-align:center;
   }
 
 }
-/* ===== NUCLEAR FIX FOR RESULTS PAGE MOBILE ===== */
+
 
 @media (max-width: 768px) {
 
-  /* Prevent horizontal overflow */
+
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -2662,7 +2600,6 @@ text-align:center;
     box-sizing: border-box !important;
   }
 
-  /* FORCE GRID ON ALL CARD WRAPPERS */
   .three-cards,
   .cards,
   .card-row,
@@ -2673,7 +2610,7 @@ text-align:center;
     width: 100% !important;
   }
 
-  /* FORCE ALL CARDS TO FIT */
+ 
   .small-card,
   .card,
   .result-card,
@@ -2685,14 +2622,14 @@ text-align:center;
     padding: 10px !important;
   }
 
-  /* Make LAST CARD FULL WIDTH (Deadline) */
+
   .three-cards > *:last-child,
   .cards > *:last-child,
   .card-row > *:last-child {
     grid-column: 1 / -1 !important;
   }
 
-  /* Reduce font sizes */
+
   .small-card h3,
   .card h3 {
     font-size: 14px !important;
@@ -2706,7 +2643,7 @@ text-align:center;
 
 }
 
-/* ===== FINAL MOBILE RESULTS FIX (CLEAN) ===== */
+
 
 @media (max-width: 768px) {
 
@@ -2743,7 +2680,7 @@ text-align:center;
   }
 
 }
-/* ===== MOBILE: Compact Analyze Button ===== */
+
 
 @media (max-width: 768px) {
 
@@ -2764,7 +2701,6 @@ text-align:center;
 
 }
 
-/* ===== MOBILE: Analyze Button Visual Fix ===== */
 
 @media (max-width: 768px) {
 
@@ -2799,9 +2735,6 @@ text-align:center;
   }
 
 }
-/* ================================
-   DESKTOP RESET – RESULTS PAGE (FIXED)
-   ================================ */
 
 @media (min-width: 769px) {
 
@@ -2818,7 +2751,6 @@ text-align:center;
     margin-bottom: 30px;
   }
 
-  /* Summary */
   .summary-card {
     padding: 22px;
     margin-bottom: 30px;
@@ -2829,7 +2761,7 @@ text-align:center;
     line-height: 1.6;
   }
 
-  /* 3 Cards */
+
   .three-cards {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -2852,7 +2784,7 @@ text-align:center;
     line-height: 1.5;
   }
 
-  /* Buttons */
+
   .result-actions {
     max-width: 700px;
     margin: 0 auto 40px;
@@ -2869,14 +2801,14 @@ text-align:center;
     margin: 10px;
   }
 
-  /* Risk bar */
+  
   .gradient-bar {
     height: 16px;
     max-width: 700px;
     margin: 16px auto;
   }
 
-    /* Disclaimer */
+   
   .disclaimer {
     max-width: 900px;
     margin: 30px auto;
@@ -2885,15 +2817,10 @@ text-align:center;
   }
 
 }
-/* ================================
-   FINAL RESULTS PAGE STABILIZER
-   DO NOT EDIT
-   ================================ */
 
-/* Desktop Layout */
 @media (min-width: 769px) {
 
-  /* Main container */
+  
   .result-page {
     max-width: 1100px;
     margin: 40px auto;
@@ -2901,21 +2828,19 @@ text-align:center;
     box-sizing: border-box;
   }
 
-  /* Title */
   .page-title {
     text-align: center;
     font-size: 32px;
     margin-bottom: 30px;
   }
 
-  /* Summary */
   .summary-card {
     width: 100%;
     padding: 24px;
     margin-bottom: 28px;
   }
 
-  /* Info cards */
+ 
   .three-cards {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -2930,7 +2855,6 @@ text-align:center;
     box-sizing: border-box;
   }
 
-  /* Buttons */
   .result-actions {
     max-width: 720px;
     margin: 40px auto;
@@ -2945,14 +2869,13 @@ text-align:center;
     font-size: 16px;
   }
 
-  /* Risk bar */
   .gradient-bar {
     max-width: 720px;
     margin: 16px auto;
     height: 16px;
   }
 
-  /* Disclaimer */
+  
   .disclaimer {
     max-width: 900px;
     margin: 30px auto;
@@ -2960,7 +2883,7 @@ text-align:center;
 }
 
 
-/* Mobile Layout (Clean) */
+
 @media (max-width: 768px) {
 
   .result-page {
@@ -2979,7 +2902,7 @@ text-align:center;
     margin-bottom: 12px;
   }
 
-  /* 2 cards + full width deadline */
+
   .three-cards {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -2994,7 +2917,7 @@ text-align:center;
     padding: 10px;
   }
 
-  /* Buttons full width */
+  
   .nextsteps-btn,
   .retry-btn {
     width: 100%;

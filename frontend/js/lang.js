@@ -205,7 +205,6 @@ const brandNames = {
     te: "న్యాయమార్గం"
 };
 
-/*Core Apply Function */
 
 function applyLanguage(lang) {
     document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -225,7 +224,6 @@ function applyLanguage(lang) {
     updateLanguageButton(lang);
 }
 
-/*UI Updates */
 function updateBrand(lang) {
     const brand = document.getElementById("brandName");
     if (brand) brand.textContent = brandNames[lang];
@@ -242,7 +240,6 @@ function updateLanguageButton(lang) {
 }
 
 
-/* Language Switching */
 
 function setupLanguageSwitcher() {
     document.querySelectorAll(".lang-dropdown div").forEach(option => {
@@ -255,7 +252,6 @@ function setupLanguageSwitcher() {
     }); 
 }
 
-/* DOM Ready */
 
 document.addEventListener("DOMContentLoaded", () => {
     applyLanguage(currentLang);

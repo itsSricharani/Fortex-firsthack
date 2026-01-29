@@ -112,7 +112,6 @@ def ai_analysis(text, lang="en"):
 
     raw_content = result["choices"][0]["message"]["content"]
 
-    # LOG FOR DEBUGGING
     print("AI RAW RESPONSE:\n", raw_content)
 
     parsed = json.loads(raw_content)
@@ -140,7 +139,6 @@ def analyze_text():
             "risk": "Unknown"
         })
 
-    # TRY AI FIRST
     if OPENROUTER_API_KEY:
         try:
             ai_result = ai_analysis(text, lang)
@@ -150,7 +148,6 @@ def analyze_text():
         except Exception as e:
             print("AI failed, falling back:", e)
 
-    # FALLBACK TO RULE-BASED
     deadline = extract_deadline(text)
     intent, summary, risk = rule_based_analysis(text)
 
@@ -159,10 +156,6 @@ def analyze_text():
         "intent": intent,
         "deadline": deadline,
         "risk": risk,
-        
-
-    
-
     })
 
 def enforce_language(result, lang):
@@ -208,7 +201,6 @@ def analyze_pdf():
     if file.filename == "":
         return jsonify({"error": "Empty file uploaded"}), 400
 
-    # Basic file type check
     if not file.filename.lower().endswith(".pdf"):
         return jsonify({
             "summary": "Uploaded file is not a PDF.",
@@ -245,7 +237,7 @@ def analyze_pdf():
             "risk": "Unknown"
         })
 
-    # TRY AI FIRST
+
     if OPENROUTER_API_KEY:
         try:
             ai_result = ai_analysis(text, lang)
@@ -254,7 +246,7 @@ def analyze_pdf():
         except Exception as e:
             print("AI failed for PDF, falling back:", e)
 
-    # FALLBACK
+
     deadline = extract_deadline(text)
     intent, summary, risk = rule_based_analysis(text)
 
@@ -275,7 +267,6 @@ def find_lawyer():
     with open(file_path, "r") as f:
         lawyers = json.load(f)
 
-    # Case-insensitive match
     results = [l for l in lawyers if l.get("state", "").strip().lower() == input_state]
 
     print("FIND LAWYER CALLED")
