@@ -5,9 +5,6 @@ import re
 import os
 import requests
 import json
-from dotenv import load_dotenv
-
-load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
@@ -15,46 +12,6 @@ CORS(app)
 
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-JUSTDIAL_API_KEY = os.getenv("JUSTDIAL_API_KEY")
-
-def enforce_language(result, lang):
-    if lang == "en":
-        return result
-
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json"
-    }
-
-    translate_prompt = {
-        "hi": "Translate the JSON values into Hindi (Devanagari). Keep keys unchanged.",
-        "te": "Translate the JSON values into Telugu script. Keep keys unchanged."
-    }[lang]
-
-    payload = {
-        "model": "arcee-ai/trinity-mini:free",
-        "messages": [
-            {"role": "system", "content": translate_prompt},
-            {"role": "user", "content": json.dumps(result, ensure_ascii=False)}
-        ]
-    }
-
-    response = requests.post(
-        "https://openrouter.ai/api/v1/chat/completions",
-        headers=headers,
-        json=payload,
-        timeout=15
-    )
-
-    try:
-        return json.loads(response.json()["choices"][0]["message"]["content"])
-    except:
-        return result
-
-
-    
-
-
 
 @app.route("/")
 def home():
@@ -167,48 +124,6 @@ def ai_analysis(text, lang="en"):
         "risk": parsed.get("risk", "Unknown")
     }
 
-@app.route("/find-lawyer", methods=["POST"])
-def find_lawyer():
-    data = request.get_json()
-    lat = data.get("lat")
-    lng = data.get("lng")
-
-    if not lat or not lng:
-        return jsonify({"error": "Missing coordinates"}), 400
-
-    url = "https://justdial-search.p.rapidapi.com/search"
-
-    headers = {
-        "X-RapidAPI-Key": JUSTDIAL_API_KEY,
-        "X-RapidAPI-Host": "justdial-search.p.rapidapi.com"
-    }
-
-    params = {
-        "query": "lawyer",
-        "latitude": lat,
-        "longitude": lng,
-        "radius": "5000"
-    }
-
-    try:
-        response = requests.get(url, headers=headers, params=params, timeout=10)
-        response.raise_for_status()
-        raw = response.json()
-    except Exception as e:
-        print("Justdial error:", e)
-        return jsonify([])
-
-    results = []
-    for item in raw.get("results", []):
-        results.append({
-            "name": item.get("name"),
-            "address": item.get("address"),
-            "phone": item.get("phone"),
-            "category": item.get("category")
-        })
-
-    print("Lawyers found:", len(results))
-    return jsonify(results)
 
 
 @app.route("/analyze", methods=["POST"])
@@ -243,8 +158,43 @@ def analyze_text():
         "summary": summary,
         "intent": intent,
         "deadline": deadline,
-        "risk": risk
+        "risk": risk,
+        
+
+    
+
     })
+
+def enforce_language(result, lang):
+    if lang == "en":
+        return result
+
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json"
+    }
+
+    translate_prompt = {
+        "hi": "Translate the JSON values into Hindi (Devanagari). Keep keys unchanged.",
+        "te": "Translate the JSON values into Telugu script. Keep keys unchanged."
+    }[lang]
+
+    payload = {
+        "model": "arcee-ai/trinity-mini:free",
+        "messages": [
+            {"role": "system", "content": translate_prompt},
+            {"role": "user", "content": json.dumps(result, ensure_ascii=False)}
+        ]
+    }
+
+    response = requests.post(
+        "https://openrouter.ai/api/v1/chat/completions",
+        headers=headers,
+        json=payload,
+        timeout=15
+    )
+
+    return json.loads(response.json()["choices"][0]["message"]["content"])
 
 
 
@@ -316,6 +266,23 @@ def analyze_pdf():
     })
 
 
+@app.route("/find-lawyer", methods=["POST"])
+def find_lawyer():
+    data = request.get_json()
+    input_state = data.get("state", "").strip().lower()
+
+    file_path = os.path.join(os.path.dirname(__file__), "lawyers.json")
+    with open(file_path, "r") as f:
+        lawyers = json.load(f)
+
+    # Case-insensitive match
+    results = [l for l in lawyers if l.get("state", "").strip().lower() == input_state]
+
+    print("FIND LAWYER CALLED")
+    print("Input state:", input_state)
+    print("Results found:", len(results))
+
+    return jsonify(results)
 
 
 
